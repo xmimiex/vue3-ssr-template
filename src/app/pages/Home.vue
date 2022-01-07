@@ -1,0 +1,53 @@
+<template>
+  <div class="home">
+    <h1>{{ name }}</h1>
+    <h3>{{ $t('environment', { value: environment }) }}</h3>
+
+    <p>{{ $d(new Date(), 'short') }}</p>
+    <p>{{ $n(100, 'currency') }}</p>
+
+    <img alt="ashkan forouzani"
+      src="../assets/ashkan-forouzani-m0l9NBCivuk-unsplash.jpg"
+      width="640"
+      height="427">
+
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  </div>
+</template>
+
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
+import HelloWorld from '@/components/atoms/HelloWorld'
+import useUser from '@/stores/user'
+import useConfig from '@/stores/config'
+import isServerSide from '@/utils/context'
+
+export default defineComponent({
+  name: 'HomePage',
+  components: {
+    HelloWorld,
+  },
+  setup() {
+    const user = useUser()
+    const name = computed(() => user.name)
+
+    const config = useConfig()
+    const environment = computed(() => config.context.environment)
+
+    if (isServerSide()) {
+      user.$patch({ name: 'Robin' })
+    }
+
+    return {
+      name,
+      environment,
+    }
+  },
+})
+</script>
+
+<style lang="scss">
+.home {
+  color: $custom-blue;
+}
+</style>

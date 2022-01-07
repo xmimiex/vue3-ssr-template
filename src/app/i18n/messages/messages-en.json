@@ -1,0 +1,6 @@
+{
+  "page": {
+    "notFound": "Page not found"
+  },
+  "environment": "Running on { value }"
+}
