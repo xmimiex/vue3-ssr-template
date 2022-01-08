@@ -2,5 +2,6 @@
   "page": {
     "notFound": "Page not found"
   },
-  "environment": "Running on { value }"
+  "environment": "Running on { value }",
+  "i18nIntroduction": "Easily format numbers and dates using i18n"
 }

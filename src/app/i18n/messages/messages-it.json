@@ -2,5 +2,6 @@
   "page": {
     "notFound": "Pagina non trovata"
   },
-  "environment": "In esecuzione in { value }"
+  "environment": "In esecuzione in { value }",
+  "i18nIntroduction": "Formatta facilmente numeri e date con i18n"
 }

@@ -1,14 +1,25 @@
 context:
   environment: local
 
+internationalization:
+  defaultCountry: UK
+  defaultLanguage: en
+  languagesForCountry:
+    UK:
+      - en
+    FR:
+      - fr
+    CH:
+      - fr
+      - it
+      - en
+
 thirdPartyScripts:
-  -
-    id: 'fake-uri'
-    uri: 'https://third-party-fake-domain/third-party-fake-path.js'
-    node: 'body'
+  - id: fake-uri
+    uri: https://third-party-fake-domain/third-party-fake-path.js
+    node: body
     async: true
     defer: true
-  -
-    id: 'fake-body'
+  - id: fake-body
     body: (function () { console.log('loading third-party with body'); } )();
-    node: 'head'
+    node: head
