@@ -15,14 +15,13 @@
     "postbuild": "node ./build/post-build.js",
     "postinstall": "yarn husky install",
     "ssr:dev": "cross-env VITE=1 ts-node src/server/index-dev-server",
-    "ssr:serve": "cross-env NODE_OPTIONS=\"--max-old-space-size=1024\" node dist/server --host 0.0.0.0",
-    "ssr:start": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=1024\" node dist/server --host 0.0.0.0",
+    "ssr:serve": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=1024\" node dist/server --host 0.0.0.0",
     "lint": "yarn lint:js --ext .ts,.js,.vue . && yarn lint:css 'src/**/*.{vue,css,scss}'",
     "lint:fix": "yarn lint:js --ext .ts,.js,.vue . --fix && yarn lint:css 'src/**/*.{vue,css,scss}' --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
-    "storybook:serve": "start-storybook -p 6006",
+    "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook"
   },
   "dependencies": {
