@@ -14,16 +14,19 @@ const setContext = (ctx: KoaContext, country: string, language: string) => {
   ctx.set('x-country-language', `${country}-${language}`)
 }
 
+const getAcceptLanguage = (ctx: KoaContext) => ctx.headers['accept-language']
+
+const redirectToCountryLanguage = (ctx: KoaContext) => {
+  const { detectedCountry, detectedCountrySupported } = countryDetection(ctx)
+  const COUNTRY = detectedCountrySupported ? detectedCountry : DEFAULT_COUNTRY
+  const LANGUAGE = detectedCountrySupported ? detectLanguage(COUNTRY, getAcceptLanguage(ctx)) : DEFAULT_LANGUAGE
+
+  doRedirect301(ctx, `/${COUNTRY}/${LANGUAGE}`)
+}
+
 export default (ctx: KoaContext, next: Next) => {
   if (ctx.path === '/') {
-    const { detectedCountry, detectedCountrySupported } = countryDetection(ctx)
-    if (detectedCountrySupported) {
-      const detectedLanguage = detectLanguage(detectedCountry, ctx.headers['accept-language'])
-      doRedirect301(ctx, `/${detectedCountry}/${detectedLanguage}`)
-    } else {
-      doRedirect301(ctx, `/${DEFAULT_COUNTRY}/${DEFAULT_LANGUAGE}`)
-    }
-    return
+    return redirectToCountryLanguage(ctx)
   }
 
   const pathSplit = ctx.path.split('/').splice(1)
@@ -37,7 +40,7 @@ export default (ctx: KoaContext, next: Next) => {
       setContext(ctx, country, language)
       return next()
     } else {
-      const detectedLanguage = detectLanguage(country, ctx.headers['accept-language'])
+      const detectedLanguage = detectLanguage(country, getAcceptLanguage(ctx))
       doRedirect301(ctx, `/${country}/${detectedLanguage}`)
     }
   } else {
@@ -46,12 +49,6 @@ export default (ctx: KoaContext, next: Next) => {
       return next()
     }
 
-    const { detectedCountry, detectedCountrySupported } = countryDetection(ctx)
-    if (detectedCountrySupported) {
-      const detectedLanguage = detectLanguage(detectedCountry, ctx.headers['accept-language'])
-      doRedirect301(ctx, `/${detectedCountry}/${detectedLanguage}`)
-    } else {
-      doRedirect301(ctx, `/${DEFAULT_COUNTRY}/${DEFAULT_LANGUAGE}`)
-    }
+    return redirectToCountryLanguage(ctx)
   }
 }
