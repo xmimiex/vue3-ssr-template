@@ -2,5 +2,6 @@
   "page": {
     "notFound": "Page introuvable"
   },
-  "environment": "Tourne sur l'environnement { value }"
+  "environment": "Tourne sur l'environnement { value }",
+  "i18nIntroduction": "Formattez facilement les nombres et les dates avec i18n"
 }

@@ -1,14 +1,20 @@
 import { KoaContext } from '../../typings/server'
 import { Next } from 'koa'
 import {
-  DEFAULT_COUNTRY,
-  DEFAULT_LANGUAGE,
   countryDetection,
   detectLanguage,
   isCountryLanguageSupported,
   isCountrySupported,
 } from './utils'
+import { appConf } from '../../utils/config'
 import { doRedirect301 } from '../../utils/redirect'
+
+const {
+  internationalization: {
+    defaultCountry,
+    defaultLanguage,
+  },
+} = appConf
 
 const setContext = (ctx: KoaContext, country: string, language: string) => {
   ctx.set('x-country-language', `${country}-${language}`)
@@ -18,8 +24,8 @@ const getAcceptLanguage = (ctx: KoaContext) => ctx.headers['accept-language']
 
 const redirectToCountryLanguage = (ctx: KoaContext) => {
   const { detectedCountry, detectedCountrySupported } = countryDetection(ctx)
-  const COUNTRY = detectedCountrySupported ? detectedCountry : DEFAULT_COUNTRY
-  const LANGUAGE = detectedCountrySupported ? detectLanguage(COUNTRY, getAcceptLanguage(ctx)) : DEFAULT_LANGUAGE
+  const COUNTRY = detectedCountrySupported ? detectedCountry : defaultCountry
+  const LANGUAGE = detectedCountrySupported ? detectLanguage(COUNTRY, getAcceptLanguage(ctx)) : defaultLanguage
 
   doRedirect301(ctx, `/${COUNTRY}/${LANGUAGE}`)
 }
@@ -45,7 +51,7 @@ export default (ctx: KoaContext, next: Next) => {
     }
   } else {
     if (!language) {
-      setContext(ctx, DEFAULT_COUNTRY, DEFAULT_LANGUAGE)
+      setContext(ctx, defaultCountry, defaultLanguage)
       return next()
     }
 

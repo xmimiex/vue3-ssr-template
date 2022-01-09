@@ -28,7 +28,17 @@ export interface ConfigThirdPartyScript {
   async?: boolean
 }
 
+interface LanguagesForCountry {
+  [key: string]: string[];
+}
+export interface Internationalization {
+  defaultCountry: string
+  defaultLanguage: string
+  languagesForCountry: LanguagesForCountry
+}
+
 export interface Config {
   context: ConfigContext
+  internationalization: Internationalization
   thirdPartyScripts?: ConfigThirdPartyScript[]
 }

@@ -8,6 +8,11 @@ export default defineStore('config', {
     context: {
       environment: '',
     },
+    internationalization: {
+      defaultLanguage: '',
+      defaultCountry: '',
+      languagesForCountry: {},
+    },
     thirdPartyScripts: [],
   } as ConfigState),
 })

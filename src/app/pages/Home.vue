@@ -3,6 +3,7 @@
     <h1>{{ name }}</h1>
     <h3>{{ $t('environment', { value: environment }) }}</h3>
 
+    <h4>{{ $t('i18nIntroduction') }}</h4>
     <p>{{ $d(new Date(), 'short') }}</p>
     <p>{{ $n(100, 'currency') }}</p>
 
@@ -49,5 +50,6 @@ export default defineComponent({
 <style lang="scss">
 .home {
   color: $custom-blue;
+  text-align: center;
 }
 </style>
