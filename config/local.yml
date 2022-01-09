@@ -1,5 +1,6 @@
 context:
   environment: local
+  port: 3000
 
 internationalization:
   defaultCountry: UK

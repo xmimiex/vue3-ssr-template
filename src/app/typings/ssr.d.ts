@@ -17,6 +17,7 @@ export type CreateAppFunction = (ctx: AppKoaContext, conf: Config) => Promise<Cr
 
 export interface ConfigContext {
   environment: string
+  port: number
 }
 
 export interface ConfigThirdPartyScript {
