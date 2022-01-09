@@ -85,6 +85,7 @@
     "jest": "^27.4.6",
     "jest-environment-jsdom": "^27.4.6",
     "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
     "koa-connect": "^2.1.0",
     "lint-staged": "^12.1.5",
     "mini-css-extract-plugin": "^2.4.5",

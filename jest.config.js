@@ -13,6 +13,6 @@ module.exports = {
   testEnvironment: 'jsdom',
   snapshotSerializers: ['jest-serializer-vue'],
   testMatch: [
-    '**/*.spec.(js|jsx|ts|tsx)',
+    '**/*.(test|spec).(js|jsx|ts|tsx)',
   ],
 }
