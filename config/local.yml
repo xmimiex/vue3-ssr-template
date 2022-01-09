@@ -1,5 +1,6 @@
 context:
   environment: local
+  port: 3000
 
 internationalization:
   defaultCountry: UK
@@ -13,6 +14,16 @@ internationalization:
       - fr
       - it
       - en
+
+cacheControl:
+  # Cache duration in minutes
+  pages:
+    category: 360
+    home: 15552000
+  static:
+    robots: 86400
+    favicon: 15552000
+    asset: 15552000
 
 thirdPartyScripts:
   - id: fake-uri

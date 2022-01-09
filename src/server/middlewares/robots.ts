@@ -2,10 +2,11 @@ import { Next } from 'koa'
 import path from 'path'
 import { KoaContext } from '../typings/server'
 import { readFileSync } from 'fs'
-
-const HOURS_24 = 24 * 60 * 60
+import { appConf } from '../utils/config'
 
 const robots = readFileSync(path.join(__dirname, '../../app', 'robots.txt')).toString()
+
+const cacheDuration = appConf.cacheControl?.static.robots ?? null
 
 export default async (ctx: KoaContext, next: Next) => {
   if ('/robots.txt' !== ctx.path) return next()
@@ -16,7 +17,9 @@ export default async (ctx: KoaContext, next: Next) => {
     return
   }
 
-  ctx.set('Cache-Control', `max-age=${HOURS_24}, s-maxage=${HOURS_24}, public`)
+  if (cacheDuration) {
+    ctx.set('Cache-Control', `max-age=${cacheDuration}, s-maxage=${cacheDuration}, public`)
+  }
   ctx.type = 'text/plain'
   ctx.body = robots
 }

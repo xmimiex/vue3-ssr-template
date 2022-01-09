@@ -7,6 +7,7 @@ import assetMiddleware from './middlewares/asset'
 import robotsMiddleware from './middlewares/robots'
 import faviconMiddleware from './middlewares/favicon'
 import countryLanguageMiddleware from './middlewares/country-language'
+import { appConf } from './utils/config'
 
 const server = new Koa()
 const router = new Router()
@@ -21,5 +22,5 @@ server.use(router.middleware())
 
 router.get('/(.*)', renderAppController)
 
-server.listen(3000, () =>
-  console.log('You can navigate to http://localhost:3000'))
+server.listen(appConf.context.port, () =>
+  console.log(`You can navigate to http://localhost:${appConf.context.port}`))

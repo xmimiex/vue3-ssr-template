@@ -17,6 +17,7 @@ export type CreateAppFunction = (ctx: AppKoaContext, conf: Config) => Promise<Cr
 
 export interface ConfigContext {
   environment: string
+  port: number
 }
 
 export interface ConfigThirdPartyScript {
@@ -37,8 +38,14 @@ export interface Internationalization {
   languagesForCountry: LanguagesForCountry
 }
 
+export interface CacheControl {
+  pages: Record<string, number>
+  static: Record<string, number>
+}
+
 export interface Config {
   context: ConfigContext
   internationalization: Internationalization
+  cacheControl?: CacheControl
   thirdPartyScripts?: ConfigThirdPartyScript[]
 }
