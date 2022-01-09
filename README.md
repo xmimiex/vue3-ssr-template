@@ -1,5 +1,7 @@
 # vue3-ssr-template
-
+[![vue 3](https://img.shields.io/static/v1?label=vue3&message=ssr&color=green)](https://github.com/vuejs/vue-next)
+![prod ready](https://img.shields.io/static/v1?label=production&message=ready&color=green)
+![license](https://img.shields.io/badge/license-MIT-blue)
 ## About
 
 No need to waste your time waiting Nuxt to be stable for using Vue 3, just clone this repository and find a true prod-ready SSR application where you can do what you want at any level, client or server side.
