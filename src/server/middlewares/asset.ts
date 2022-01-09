@@ -4,13 +4,14 @@ import { assetsDir } from '../utils/config'
 import { KoaContext } from '../typings/server'
 import mount from 'koa-mount'
 import { Next } from 'koa'
+import { appConf } from '../utils/config'
 
-const MONTHS_6 = 6 * 30 * 24 * 60 * 60
+const cacheDuration = appConf.cacheControl?.static.asstets ?? null
 
 export default async (ctx: KoaContext, next: Next) => {
-  return mount(`/${assetsDir}`, serve(path.join(__dirname, '../../app', assetsDir), {
-    setHeaders: (res) => res.setHeader('cache-control', `max-age=${MONTHS_6}, s-maxage=${MONTHS_6}, public`),
-  }))(ctx, () => {
+  return mount(`/${assetsDir}`, serve(path.join(__dirname, '../../app', assetsDir), cacheDuration ? {
+    setHeaders: (res) => res.setHeader('cache-control', `max-age=${cacheDuration}, s-maxage=${cacheDuration}, public`),
+  } : {}))(ctx, () => {
     return ctx.path.startsWith(`/${assetsDir}`) ? Promise.resolve() : next()
   })
 }

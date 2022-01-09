@@ -2,10 +2,11 @@ import { Next } from 'koa'
 import path from 'path'
 import { KoaContext } from '../typings/server'
 import { readFileSync } from 'fs'
-
-const MONTHS_6 = 6 * 30 * 24 * 60 * 60
+import { appConf } from '../utils/config'
 
 const favicon = readFileSync(path.join(__dirname, '../../app', 'favicon.ico')).toString()
+
+const cacheDuration = appConf.cacheControl?.static.favicon ?? null
 
 export default async (ctx: KoaContext, next: Next) => {
   if ('/favicon.ico' !== ctx.path) return next()
@@ -16,7 +17,9 @@ export default async (ctx: KoaContext, next: Next) => {
     return
   }
 
-  ctx.set('Cache-Control', `max-age=${MONTHS_6}, s-maxage=${MONTHS_6}, public`)
+  if (cacheDuration) {
+    ctx.set('Cache-Control', `max-age=${cacheDuration}, s-maxage=${cacheDuration}, public`)
+  }
   ctx.type = 'image/x-icon'
   ctx.body = favicon
 }
