@@ -7,6 +7,7 @@ export default defineStore('config', {
   state: () => ({
     context: {
       environment: '',
+      port: 0,
     },
     internationalization: {
       defaultLanguage: '',
