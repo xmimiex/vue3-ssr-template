@@ -7,12 +7,14 @@
     <p>{{ $d(new Date(), 'short') }}</p>
     <p>{{ $n(100, 'currency') }}</p>
 
-    <img alt="ashkan forouzani"
+    <img
+      alt="ashkan forouzani"
+      class="image"
       src="../assets/ashkan-forouzani-m0l9NBCivuk-unsplash.jpg"
       width="640"
       height="427">
 
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
@@ -51,5 +53,9 @@ export default defineComponent({
 .home {
   color: $custom-blue;
   text-align: center;
+}
+
+.image {
+  max-width: 100%;
 }
 </style>
