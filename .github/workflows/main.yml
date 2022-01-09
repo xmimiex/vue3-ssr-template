@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  node-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Nodejs and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+      - name: Unit tests
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: test
+
+      - name: Linter
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: lint
+
+      - name: Build application
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
+
+      - name: Build Storybook
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: storybook:build
