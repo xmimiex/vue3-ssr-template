@@ -3,5 +3,13 @@
     "notFound": "Page introuvable"
   },
   "environment": "Tourne sur l'environnement { value }",
-  "i18nIntroduction": "Formattez facilement les nombres et les dates avec i18n"
+  "i18nIntroduction": "Formattez facilement les nombres et les dates avec i18n",
+  "localeSwitcher": {
+    "title": "Changer de région",
+    "countries": {
+      "UK": "Angleterre",
+      "FR": "France",
+      "CH": "Suisse"
+    }
+  }
 }
