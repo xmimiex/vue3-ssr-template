@@ -15,6 +15,16 @@ internationalization:
       - it
       - en
 
+cacheControl:
+  # Cache duration in minutes
+  pages:
+    category: 360
+    home: 15552000
+  static:
+    robots: 86400
+    favicon: 15552000
+    asset: 15552000
+
 thirdPartyScripts:
   - id: fake-uri
     uri: https://third-party-fake-domain/third-party-fake-path.js

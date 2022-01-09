@@ -38,8 +38,14 @@ export interface Internationalization {
   languagesForCountry: LanguagesForCountry
 }
 
+export interface CacheControl {
+  pages: Record<string, number>
+  static: Record<string, number>
+}
+
 export interface Config {
   context: ConfigContext
   internationalization: Internationalization
+  cacheControl?: CacheControl
   thirdPartyScripts?: ConfigThirdPartyScript[]
 }
