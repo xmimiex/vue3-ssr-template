@@ -10,6 +10,10 @@ export default defineStore('config', {
       port: 0,
     },
     headers: {},
+    cacheControl: {
+      pages: {},
+      static: {},
+    },
     internationalization: {
       defaultLanguage: '',
       defaultCountry: '',
