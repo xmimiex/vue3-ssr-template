@@ -7,8 +7,6 @@ import { Pinia } from 'pinia'
 import createI18n from './i18n'
 import { AppKoaContext } from '@/typings/ssr'
 
-import './assets/scss/index.scss'
-
 interface CreateAppArgs {
   serverContext?: AppKoaContext
   postCreateStore: (_store?: Pinia) => Promise<void>
