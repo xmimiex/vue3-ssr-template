@@ -45,6 +45,7 @@ export interface CacheControl {
 
 export interface Config {
   context: ConfigContext
+  headers: Record<string, string>
   internationalization: Internationalization
   cacheControl?: CacheControl
   thirdPartyScripts?: ConfigThirdPartyScript[]

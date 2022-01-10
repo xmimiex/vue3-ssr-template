@@ -9,6 +9,7 @@ export default defineStore('config', {
       environment: '',
       port: 0,
     },
+    headers: {},
     internationalization: {
       defaultLanguage: '',
       defaultCountry: '',

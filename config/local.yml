@@ -2,6 +2,9 @@ context:
   environment: local
   port: 3000
 
+headers:
+  countryLanguage: "x-country-languages"
+
 internationalization:
   defaultCountry: UK
   defaultLanguage: en
