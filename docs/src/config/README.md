@@ -1,0 +1,65 @@
+---
+sidebar: auto
+---
+
+# Configuration reference
+
+## context
+
+```yaml
+context:
+  environment: production
+  port: 8080
+```
+
+## headers
+
+```yaml
+headers:
+  countryLanguage: "x-country-language"
+```
+
+## internationalization
+
+```yaml
+internationalization:
+  defaultCountry: UK
+  defaultLanguage: en
+  languagesForCountry:
+    UK:
+      - en
+    FR:
+      - fr
+    CH:
+      - fr
+      - it
+      - en
+```
+
+## Cache control
+
+```yaml
+cacheControl:
+  pages:
+    category: 360
+    home: 15552000
+  static:
+    robots: 86400
+    favicon: 15552000
+    asset: 15552000
+```
+
+## Third party scripts
+
+```yaml
+thirdPartyScripts:
+  - id: fake-uri
+    uri: https://third-party-fake-domain/third-party-fake-path.js
+    node: body
+    async: true
+    defer: true
+  - id: fake-body
+    body: (function () { console.log('loading third-party with body'); } )();
+    node: head
+```
+
