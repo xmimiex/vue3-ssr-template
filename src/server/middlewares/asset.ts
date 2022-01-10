@@ -6,7 +6,7 @@ import mount from 'koa-mount'
 import { Next } from 'koa'
 import { appConf } from '../utils/config'
 
-const cacheDuration = appConf.cacheControl?.static.asstets ?? null
+const cacheDuration = appConf.cacheControl?.static.asset ?? null
 
 export default async (ctx: KoaContext, next: Next) => {
   return mount(`/${assetsDir}`, serve(path.join(__dirname, '../../app', assetsDir), cacheDuration ? {
