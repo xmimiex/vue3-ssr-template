@@ -4,7 +4,7 @@
       {{ $t('localeSwitcher.title') }}
     </label>
     <select id="locale-switcher" @change="switchLocale($event.target.value)">
-      <template v-for="(localeOption, index) in localeOptions" :key="index">
+      <template v-for="localeOption in localeOptions" :key="localeOption.label">
         <option :value="localeOption.value" :selected="localeOption.selected">
           {{ localeOption.label }}
         </option>
