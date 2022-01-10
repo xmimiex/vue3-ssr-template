@@ -6,7 +6,7 @@
     "node": ">=16.13.1"
   },
   "scripts": {
-    "analyz": "cross-env NODE_ENV=production ANALYZ_PORT=true npm run build:app-client",
+    "analyz": "cross-env NODE_ENV=production ANALYZ_PORT=true yarn run build:app-client",
     "build": "rm -rf ./dist && npm-run-all --parallel build:app build:server",
     "build:app": "rm -rf ./dist/app && npm-run-all --parallel build:app-client build:app-server",
     "build:app-client": "cross-env NODE_ENV=production webpack --config ./build/webpack.app-client.js",
@@ -23,7 +23,9 @@
     "test:coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "storybook:dev": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "docker:build": "docker build -t vue3-ssr-template .",
+    "docker:run": "docker run -e \"VUE_APP_CONFIG_FILE=./config/production.yml\" -p 8080:8080 -d vue3-ssr-template"
   },
   "dependencies": {
     "@vueuse/head": "^0.7.4",
