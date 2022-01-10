@@ -33,7 +33,7 @@ const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'head' | 'b
 }
 
 const renderDevServerScript = () => Boolean(process.env.VITE)
-  ? '<script type="module" src="../src/app/entry-client.ts"></script>'
+  ? '<script type="module" src="/src/app/entry-client.ts"></script>'
   : ''
 
 export default (ctx: KoaContext,
