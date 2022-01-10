@@ -2,6 +2,9 @@ context:
   environment: production
   port: 8080
 
+headers:
+  countryLanguage: "x-country-languages"
+
 internationalization:
   defaultCountry: UK
   defaultLanguage: en

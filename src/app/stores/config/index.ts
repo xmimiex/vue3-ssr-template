@@ -9,6 +9,11 @@ export default defineStore('config', {
       environment: '',
       port: 0,
     },
+    headers: {},
+    cacheControl: {
+      pages: {},
+      static: {},
+    },
     internationalization: {
       defaultLanguage: '',
       defaultCountry: '',

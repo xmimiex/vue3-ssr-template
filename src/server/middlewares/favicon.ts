@@ -6,7 +6,7 @@ import { appConf } from '../utils/config'
 
 const favicon = readFileSync(path.join(__dirname, '../../app', 'favicon.ico')).toString()
 
-const cacheDuration = appConf.cacheControl?.static.favicon ?? null
+const cacheDuration = appConf.cacheControl.static.favicon || null
 
 export default async (ctx: KoaContext, next: Next) => {
   if ('/favicon.ico' !== ctx.path) return next()

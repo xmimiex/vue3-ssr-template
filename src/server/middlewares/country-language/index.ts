@@ -10,6 +10,9 @@ import { appConf } from '../../utils/config'
 import { doRedirect301 } from '../../utils/redirect'
 
 const {
+  headers: {
+    countryLanguage,
+  },
   internationalization: {
     defaultCountry,
     defaultLanguage,
@@ -17,7 +20,7 @@ const {
 } = appConf
 
 const setContext = (ctx: KoaContext, country: string, language: string) => {
-  ctx.set('x-country-language', `${country}-${language}`)
+  ctx.set(countryLanguage, `${country}-${language}`)
 }
 
 const getAcceptLanguage = (ctx: KoaContext) => ctx.headers['accept-language']

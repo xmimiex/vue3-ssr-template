@@ -4,7 +4,7 @@ import useConfig from '@/stores/config'
 import useContext from '@/stores/context'
 
 export default {
-  title: 'LocaleSwitcher',
+  title: 'Atoms/LocaleSwitcher',
 } as Meta
 
 const Template: Story = () => ({

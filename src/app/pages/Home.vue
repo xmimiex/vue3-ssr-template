@@ -26,7 +26,7 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import HelloWorld from '@/components/atoms/HelloWorld'
-import LocaleSwitcher from '@/components/LocaleSwitcher'
+import LocaleSwitcher from '@/components/atoms/LocaleSwitcher'
 import useUser from '@/stores/user'
 import useConfig from '@/stores/config'
 import isServerSide from '@/utils/context'

@@ -6,7 +6,7 @@ import { appConf } from '../utils/config'
 
 const robots = readFileSync(path.join(__dirname, '../../app', 'robots.txt')).toString()
 
-const cacheDuration = appConf.cacheControl?.static.robots ?? null
+const cacheDuration = appConf.cacheControl.static.robots || null
 
 export default async (ctx: KoaContext, next: Next) => {
   if ('/robots.txt' !== ctx.path) return next()

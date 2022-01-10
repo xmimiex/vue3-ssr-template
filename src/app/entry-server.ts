@@ -5,7 +5,8 @@ import { AppKoaContext, Config } from '@/typings/ssr'
 
 export default async (ctx: AppKoaContext, conf: Config) => {
   const postCreateStore = async () => {
-    const [ country, language ] = ctx.response.get('x-country-language')?.split('-')
+
+    const [ country, language ] = ctx.response.get(conf.headers.countryLanguage)?.split('-')
     const context = useContext()
     context.$patch({ country, language })
 
