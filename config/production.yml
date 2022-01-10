@@ -3,7 +3,7 @@ context:
   port: 8080
 
 headers:
-  countryLanguage: "x-country-languages"
+  countryLanguage: "x-country-language"
 
 internationalization:
   defaultCountry: UK
