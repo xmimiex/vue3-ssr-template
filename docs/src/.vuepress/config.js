@@ -1,7 +1,6 @@
 const { description } = require('../../package')
 
 module.exports = {
-  base: 'vue3-ssr-template',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
@@ -36,7 +35,7 @@ module.exports = {
     nav: [
       {
         text: 'Guide',
-        link: '/guide/',
+        link: '/guide/'
       },
       {
         text: 'Config',
@@ -51,6 +50,7 @@ module.exports = {
           children: [
             '',
             'getting-started',
+            'folder-structure'
           ]
         }
       ],

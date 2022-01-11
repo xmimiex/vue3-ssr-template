@@ -4,7 +4,14 @@ sidebar: auto
 
 # Configuration reference
 
-## context
+```
+.
+┣ 📂config
+ ┃ ┣ 📜local.yml
+ ┃ ┗ 📜production.yml
+```
+
+## Context
 
 ```yaml
 context:
@@ -12,14 +19,14 @@ context:
   port: 8080
 ```
 
-## headers
+## Headers
 
 ```yaml
 headers:
   countryLanguage: "x-country-language"
 ```
 
-## internationalization
+## Internationalization
 
 ```yaml
 internationalization:
@@ -38,6 +45,9 @@ internationalization:
 
 ## Cache control
 
+You can set a header cache value for each pages and static assets.
+Values are in ms
+
 ```yaml
 cacheControl:
   pages:
@@ -51,11 +61,14 @@ cacheControl:
 
 ## Third party scripts
 
+If you want to add third party scripts, like analytics, ab testing script, ...
+You can easily add them here.
+
 ```yaml
 thirdPartyScripts:
-  - id: fake-uri
-    uri: https://third-party-fake-domain/third-party-fake-path.js
-    node: body
+  - id: fake-uri # tag id
+    uri: https://third-party-fake-domain/third-party-fake-path.js 
+    node: body # values can be `body` or `head`
     async: true
     defer: true
   - id: fake-body

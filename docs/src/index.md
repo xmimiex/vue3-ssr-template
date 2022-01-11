@@ -9,7 +9,7 @@ features:
   details: Server Side Rendering 
 - title: i18n
   details: Internationalization
-- title: production ready
+- title: Production ready
   details: Everything you need to start a production ready web application
 footer: Made with ❤️
 ---
