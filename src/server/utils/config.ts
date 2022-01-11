@@ -3,9 +3,7 @@ import YAML from 'js-yaml'
 import { Config } from '../../app/typings/ssr'
 import dotenv from 'dotenv'
 
-dotenv.config({
-  path: process.env.NODE_ENV !== 'production' ? '.env' : '.env.production',
-})
+dotenv.config()
 
 let config: Config
 const readConfig = () => {
