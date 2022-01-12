@@ -45,6 +45,7 @@ export interface CacheControl {
 
 export interface Config {
   context: ConfigContext
+  assetsDir: string
   headers: Record<string, string>
   internationalization: Internationalization
   cacheControl: CacheControl
