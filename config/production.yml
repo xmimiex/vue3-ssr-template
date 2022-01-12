@@ -5,6 +5,8 @@ context:
 headers:
   countryLanguage: "x-country-language"
 
+assetsDir: assets
+
 internationalization:
   defaultCountry: UK
   defaultLanguage: en

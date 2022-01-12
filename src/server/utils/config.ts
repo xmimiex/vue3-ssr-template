@@ -16,4 +16,3 @@ const readConfig = () => {
 }
 
 export const appConf = Object.freeze(readConfig())
-export const assetsDir = 'assets'
