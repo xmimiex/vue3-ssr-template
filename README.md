@@ -52,7 +52,7 @@ yarn docker:build
 yarn docker:run
 ```
 
-By default, application runs with the config file production.yml (a copy from the config folder)
+By default, application runs with the config file production.yml (an alias to the one from the config folder)
 
 > Or simply start application
 

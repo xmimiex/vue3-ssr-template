@@ -25,7 +25,7 @@
     "storybook:dev": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "docker:build": "docker build -t vue3-ssr-template .",
-    "docker:run": "docker run -e \"VUE_APP_CONFIG_FILE=./config/production.yml\" -p 8080:8080 -d vue3-ssr-template",
+    "docker:run": "docker run -e 'VUE_APP_CONFIG_FILE=/config/production.yml' -v $(pwd)/config:/config -p 8080:8080 -d vue3-ssr-template",
     "docs:dev": "yarn --cwd docs docs:dev",
     "docs:build": "yarn --cwd docs docs:build"
   },
