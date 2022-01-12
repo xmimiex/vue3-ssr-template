@@ -15,7 +15,7 @@
  ┃ ┃ ┃ ┣ 📂scss
  ┃ ┃ ┃ ┃ ┣ 📜index.scss
  ┃ ┃ ┃ ┃ ┗ 📜tokens.scss
- ┃ ┃ ┣ 📂components // you can arrange your componants as you like but we recommend using atoms molecules and organisms 
+ ┃ ┃ ┣ 📂components // you can arrange your components as you like but we recommend using atoms molecules and organisms 
  ┃ ┃ ┃ ┗ 📂atoms
  ┃ ┃ ┣ 📂i18n
  ┃ ┃ ┃ ┣ 📂formats
@@ -47,8 +47,7 @@
  ┃ ┃ ┣ 📂utils
  ┃ ┃ ┣ 📜index-dev-server.ts
  ┃ ┃ ┣ 📜index.ts
- ┃ ┃ ┗ 📜tsconfig-server.json // confi file for server only
+ ┃ ┃ ┗ 📜tsconfig-server.json // config file for server only
  ┣ 📜.env
- ┣ 📜.env.production
  ┣ 📜package.json
 ```

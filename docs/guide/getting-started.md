@@ -1,4 +1,4 @@
-# Setup
+# Project setup
 
 ```
 yarn install
@@ -23,7 +23,16 @@ This script builds :
 - application : client part and server part (built by Webpack 5)
 - nodejs server : ssr part (built by tsc)
 
-Then start application
+> Then build & start Docker image
+
+```
+yarn docker:build
+yarn docker:run
+```
+
+By default, application runs with the config file production.yml (an alias to the one from the config folder)
+
+> Or simply start application
 
 ```
 yarn ssr:serve

@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # Configuration reference
 
 ```
@@ -66,13 +62,12 @@ You can easily add them here.
 
 ```yaml
 thirdPartyScripts:
-  - id: fake-uri # tag id
+  - id: fake-uri-id # tag id
     uri: https://third-party-fake-domain/third-party-fake-path.js 
     node: body # values can be `body` or `head`
     async: true
     defer: true
-  - id: fake-body
+  - id: fake-body-id
     body: (function () { console.log('loading third-party with body'); } )();
     node: head
 ```
-
