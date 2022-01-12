@@ -7,6 +7,7 @@ const assetsDir = 'assets'
 const config = {
   mode: isProd ? 'production' : 'development',
   devtool: isProd ? false : 'source-map',
+  stats: 'minimal',
   output: {
     assetModuleFilename: `${assetsDir}/img/[name].[contenthash:8][ext][query]`,
   },

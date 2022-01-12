@@ -7,13 +7,13 @@ import { renderHeadToString } from '@vueuse/head'
 import { appConf } from '../utils/config'
 import render from '../utils/render'
 
-const manifest = require('../../app/ssr-manifest.json')
+const manifest = __non_webpack_require__('../app/ssr-manifest.json')
 
-const templateIndexHtml = fs.readFileSync(path.join(__dirname, '../../app', 'index.html')).toString()
-const externalStyles = fs.readFileSync(path.join(__dirname, '../../app', manifest['app.css'])).toString()
+const templateIndexHtml = fs.readFileSync(path.join(process.cwd(), '/dist/app', 'index.html')).toString()
+const externalStyles = fs.readFileSync(path.join(process.cwd(), '/dist/app', manifest['app.css'])).toString()
 
-const appPath = path.join(__dirname, '../../app', manifest['app.js'])
-const createApp: CreateAppFunction = require(appPath).default
+const appPath = path.join(process.cwd(), '/dist/app', manifest['app.js'])
+const createApp: CreateAppFunction = __non_webpack_require__(appPath).default
 
 export default async (ctx: KoaContext) => {
   try {
