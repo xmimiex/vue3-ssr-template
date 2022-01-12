@@ -6,7 +6,6 @@ COPY package.json ./
 COPY yarn.lock ./
 COPY dist/app ./dist/app
 COPY dist/server ./dist/server
-COPY config/production.yml ./config/
 
 RUN yarn install --frozen-lockfile
 
