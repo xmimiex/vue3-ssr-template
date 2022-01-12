@@ -2,14 +2,13 @@ FROM node:16.13.1-alpine3.15
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY yarn.lock ./
-COPY dist/app ./dist/app
-COPY dist/server ./dist/server
+COPY package.json .
+COPY yarn.lock .
+COPY dist ./dist
 
-RUN yarn install --frozen-lockfile
+RUN yarn install --production --frozen-lockfile
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
-CMD [ "yarn", "run", "ssr:serve" ]
+CMD [ "yarn", "serve:prod" ]

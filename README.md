@@ -29,7 +29,7 @@ yarn install
 ### Compiles and hot-reloads for development
 
 ```
-yarn ssr:dev
+yarn serve:dev
 ```
 
 Vite is used to serve the application in "dev-server" mode.
@@ -48,8 +48,8 @@ This script builds :
 > Then build & start Docker image
 
 ```
-yarn docker:build
-yarn docker:run
+yarn build:docker
+yarn serve:docker
 ```
 
 By default, application runs with the config file production.yml (an alias to the one from the config folder)
@@ -57,7 +57,7 @@ By default, application runs with the config file production.yml (an alias to th
 > Or simply start application
 
 ```
-yarn ssr:serve
+yarn serve:prod
 ```
 
 ### Run your unit tests
@@ -81,13 +81,13 @@ yarn analyz
 ### Compiles Storybook and hot-reloads for development
 
 ```
-yarn storybook:dev
+yarn serve:storybook
 ```
 
 ### Compiles Storybook for production
 
 ```
-yarn storybook:build
+yarn build:storybook
 ```
 
 ## Special thanks 💚
