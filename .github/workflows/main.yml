@@ -41,4 +41,4 @@ jobs:
       - name: Build Storybook
         uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: storybook:build
+          cmd: build:storybook

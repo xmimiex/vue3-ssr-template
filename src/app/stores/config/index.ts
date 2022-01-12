@@ -9,6 +9,7 @@ export default defineStore('config', {
       environment: '',
       port: 0,
     },
+    assetsDir: '',
     headers: {},
     cacheControl: {
       pages: {},
