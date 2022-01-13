@@ -1,5 +1,6 @@
 module.exports = {
   // site config
+  base: '/vue3-ssr-template/',
   lang: 'en-US',
   title: 'Vue3 SSR Template',
   description: 'Prod ready starter for your large scale-up Vue SSR application regarding SEO, Internationalization',
