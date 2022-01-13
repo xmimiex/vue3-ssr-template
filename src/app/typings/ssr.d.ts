@@ -51,3 +51,17 @@ export interface Config {
   cacheControl: CacheControl
   thirdPartyScripts?: ConfigThirdPartyScript[]
 }
+
+
+export interface RenderArgs {
+  ctx: KoaContext,
+  templateHtml: string,
+  htmlAttrs: string,
+  headTags: string,
+  bodyAttrs: string,
+  styles?: string,
+  store: Pinia,
+  modules?: string[],
+  manifest: Record<string, any>,
+  appHtml: string,
+}

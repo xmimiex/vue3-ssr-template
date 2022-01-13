@@ -1,18 +1,17 @@
 import { Pinia } from 'pinia'
-import { ConfigThirdPartyScript } from '@app/typings/ssr'
+import { ConfigThirdPartyScript, RenderArgs } from '@app/typings/ssr'
 import { ParsedUrlQuery } from 'querystring'
 import { appConf } from '@server/utils/config'
-import { KoaContext } from '@server/typings/server'
 
 const renderState = (store: Pinia) => {
   if (!store) return ''
   return `<script>window.__INITIAL_STATE__=${JSON.stringify(store.state.value)}</script>`
 }
 
-const renderStyles = (styles: string) =>
+const renderStyles = (styles = '') => styles ?
   `<style>\
 ${styles}\
-</style>`
+</style>` : ''
 
 const convertScriptConfigToHtml = (scriptConfig: ConfigThirdPartyScript) =>
   `<script \
@@ -32,27 +31,52 @@ const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'head' | 'b
     .join('\n')
 }
 
-const renderDevServerScript = () => Boolean(process.env.VITE)
-  ? '<script type="module" src="/src/app/entry-client.ts"></script>'
-  : ''
+const renderPreloadLinks = (modules: string[] = [], manifest: Record<string, any> = {}) => {
+  let links = ''
+  const seen = new Set()
+  modules?.forEach((id: string) => {
+    const files = manifest[id]
+    if (files) {
+      files.forEach((file: string) => {
+        if (!seen.has(file)) {
+          seen.add(file)
+          links += renderPreloadLink(file)
+        }
+      })
+    }
+  })
+  return links
+}
 
-export default (ctx: KoaContext,
-  templateHtml: string,
-  htmlAttrs: string,
-  headTags: string,
-  bodyAttrs: string,
-  styles: string,
-  store: Pinia,
-  appHtml: string,
-) => {
-  return templateHtml
-    .replace('{{ html_attrs }}', htmlAttrs)
-    .replace('{{ head_tags }}', headTags)
-    .replace('{{ body_attrs }}', bodyAttrs)
-    .replace('{{ state }}', renderState(store))
-    .replace('{{ styles }}', renderStyles(styles))
-    .replace('{{ third_party_head }}', renderThirdPartyScripts(ctx.request.query, 'head'))
+const renderPreloadLink = (file: string) =>{
+  if (file.endsWith('.js')) {
+    return `<link rel="modulepreload" crossorigin href="${file}">`
+  } else if (file.endsWith('.css')) {
+    return `<link rel="stylesheet" href="${file}">`
+  } else if (file.endsWith('.woff')) {
+    return ` <link rel="preload" href="${file}" as="font" type="font/woff" crossorigin>`
+  } else if (file.endsWith('.woff2')) {
+    return ` <link rel="preload" href="${file}" as="font" type="font/woff2" crossorigin>`
+  } else if (file.endsWith('.gif')) {
+    return ` <link rel="preload" href="${file}" as="image" type="image/gif">`
+  } else if (file.endsWith('.jpg') || file.endsWith('.jpeg')) {
+    return ` <link rel="preload" href="${file}" as="image" type="image/jpeg">`
+  } else if (file.endsWith('.png')) {
+    return ` <link rel="preload" href="${file}" as="image" type="image/png">`
+  } else {
+    return ''
+  }
+}
+
+export default (renderArgs: RenderArgs) => {
+  return renderArgs.templateHtml
+    .replace('{{ html_attrs }}', renderArgs.htmlAttrs)
+    .replace('{{ head_tags }}', renderArgs.headTags)
+    .replace('{{ body_attrs }}', renderArgs.bodyAttrs)
+    .replace('{{ state }}', renderState(renderArgs.store))
+    .replace('{{ styles }}', renderStyles(renderArgs.styles))
+    .replace('{{ preload_links }}', renderPreloadLinks(renderArgs.modules, renderArgs.manifest))
+    .replace('{{ third_party_head }}', renderThirdPartyScripts(renderArgs.ctx.request.query, 'head'))
     .replace('{{ third_party_body }}', '')
-    .replace('{{ dev_server_script }}', renderDevServerScript())
-    .replace('{{ app_html }}', appHtml)
+    .replace('{{ app_html }}', renderArgs.appHtml)
 }

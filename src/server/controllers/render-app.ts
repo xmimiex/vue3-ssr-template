@@ -1,19 +1,14 @@
-import path from 'path'
 import fs from 'fs'
-import { CreateAppFunction } from '@app/typings/ssr'
 import { KoaContext } from '@server/typings/server'
 import { renderToString } from '@vue/server-renderer'
 import { renderHeadToString } from '@vueuse/head'
 import { appConf } from '@server/utils/config'
 import render from '@server/utils/render'
+import resolve from '../utils/resolve'
 
-const manifest = __non_webpack_require__('../app/ssr-manifest.json')
-
-const templateIndexHtml = fs.readFileSync(path.join(process.cwd(), '/dist/app', 'index.html')).toString()
-const externalStyles = fs.readFileSync(path.join(process.cwd(), '/dist/app', manifest['app.css'])).toString()
-
-const appPath = path.join(process.cwd(), '/dist/app', manifest['app.js'])
-const createApp: CreateAppFunction = __non_webpack_require__(appPath).default
+const templateIndexHtml = fs.readFileSync(resolve('dist/app/client/index.html'), 'utf-8')
+const manifest = require(resolve('dist/app/client/ssr-manifest.json'))
+const createApp = require(resolve('dist/app/server/entry-server')).default
 
 export default async (ctx: KoaContext) => {
   try {
@@ -22,18 +17,21 @@ export default async (ctx: KoaContext) => {
     await router.push(ctx.request.url)
     await router.isReady()
 
-    const html = await renderToString(app)
+    const renderContext: any = {}
+    const html = await renderToString(app, renderContext)
     const { headTags, htmlAttrs, bodyAttrs } = renderHeadToString(head)
 
-    const bodyHtml = render(ctx,
-      templateIndexHtml,
+    const bodyHtml = render({
+      ctx,
+      templateHtml: templateIndexHtml,
       htmlAttrs,
       headTags,
       bodyAttrs,
-      externalStyles,
+      modules: renderContext.modules,
+      manifest,
       store,
-      html,
-    )
+      appHtml: html,
+    })
 
     ctx.body = bodyHtml
     ctx.status = ctx.status || 200

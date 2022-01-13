@@ -4,7 +4,7 @@ import { KoaContext } from '@server/typings/server'
 import { readFileSync } from 'fs'
 import { appConf } from '@server/utils/config'
 
-const robots = readFileSync(path.join(process.cwd(), '/dist/app', 'robots.txt')).toString()
+const robots = readFileSync(path.join(process.cwd(), '/dist/app/client', 'robots.txt')).toString()
 
 const cacheDuration = appConf.cacheControl.static.robots || null
 

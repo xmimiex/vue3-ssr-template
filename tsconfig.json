@@ -12,7 +12,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env",
       "jest"
     ],
     "typeRoots": [
@@ -43,7 +42,16 @@
   ],
   "ts-node": {
     "compilerOptions": {
+      "baseUrl": ".",
       "module": "CommonJS",
+      "paths": {
+        "@app/*": [
+          "src/app/*"
+        ],
+        "@server/*": [
+          "src/server/*"
+        ]
+      },
     }
   },
 }
