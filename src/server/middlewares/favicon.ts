@@ -4,7 +4,7 @@ import { KoaContext } from '../typings/server'
 import { readFileSync } from 'fs'
 import { appConf } from '../utils/config'
 
-const favicon = readFileSync(path.join(__dirname, '../../app', 'favicon.ico')).toString()
+const favicon = readFileSync(path.join(process.cwd(), '/dist/app', 'favicon.ico')).toString()
 
 const cacheDuration = appConf.cacheControl.static.favicon || null
 
