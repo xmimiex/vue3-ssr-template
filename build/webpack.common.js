@@ -27,20 +27,14 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/env'],
-        },
+        loader: 'swc-loader',
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/env'],
-            },
+            loader: 'swc-loader',
           },
           {
             loader: 'ts-loader',
