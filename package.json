@@ -12,7 +12,7 @@
     "build:app": "rm -rf ./dist/app && npm-run-all build:app-client build:app-server",
     "build:app-client": "cross-env NODE_ENV=production webpack --config ./build/webpack.app-client.js",
     "build:app-server": "cross-env NODE_ENV=production webpack --config ./build/webpack.app-server.js",
-    "build:server": "rm -rf ./dist/server && cross-env NODE_ENV=production webpack --config ./build/webpack.server.js",    
+    "build:server": "rm -rf ./dist/server && cross-env NODE_ENV=production webpack --config ./build/webpack.server.js",
     "postbuild": "node ./build/post-build.js",
     "serve:dev": "cross-env VITE=1 ts-node src/server/index-dev-server",
     "serve:dev-debug": "cross-env VITE=1 DEBUG=vite:* ts-node src/server/index-dev-server",
@@ -30,7 +30,6 @@
     "build:docs": "vuepress build docs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
     "@vueuse/head": "^0.7.4",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
@@ -49,9 +48,6 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/plugin-transform-runtime": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
     "@storybook/addon-actions": "^6.4.9",
@@ -61,6 +57,8 @@
     "@storybook/core": "^6.4.9",
     "@storybook/manager-webpack5": "^6.4.9",
     "@storybook/vue3": "^6.4.9",
+    "@swc/core": "^1.2.129",
+    "@swc/jest": "^0.2.17",
     "@types/jest": "^27.4.0",
     "@types/js-yaml": "^4.0.5",
     "@types/koa": "^2.13.4",
@@ -105,6 +103,7 @@
     "stylelint-config-recommended-vue": "^1.1.0",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
+    "swc-loader": "^0.1.15",
     "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
