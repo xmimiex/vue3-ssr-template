@@ -1,4 +1,4 @@
-name: CI
+name: install-build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  node-ci:
+  install-build:
     runs-on: ubuntu-latest
 
     steps:
