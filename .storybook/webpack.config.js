@@ -11,13 +11,14 @@ module.exports = async ({ config }) => {
         loader: 'sass-loader',
         options: {
           additionalData: `
-            @import '~@/assets/scss/tokens.scss';
+            @import '~@app/assets/scss/tokens.scss';
           `
         }
       }
     ],
   });
-  config.resolve.alias['@'] = path.resolve(__dirname, '../src/app');
+  config.resolve.alias['@app'] = path.resolve(__dirname, '../src/app');
+  config.resolve.alias['@server'] = path.resolve(__dirname, '../src/server');
 
   return config;
 };

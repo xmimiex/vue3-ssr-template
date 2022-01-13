@@ -2,7 +2,7 @@ import { createPinia } from 'pinia'
 import useUser from './user'
 import useSeo from './seo'
 import useContext from './context'
-import isServerSide from '@/utils/context'
+import isServerSide from '@app/utils/context'
 
 export default () => {
   const pinia = createPinia()

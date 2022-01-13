@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/vue3'
 import LocaleSwitcher from './LocaleSwitcher.vue'
-import useConfig from '@/stores/config'
-import useContext from '@/stores/context'
+import useConfig from '@app/stores/config'
+import useContext from '@app/stores/context'
 
 export default {
   title: 'Atoms/LocaleSwitcher',

@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import YAML from 'js-yaml'
-import { Config } from '../../app/typings/ssr'
+import { Config } from '@app/typings/ssr'
 import dotenv from 'dotenv'
 
 dotenv.config()

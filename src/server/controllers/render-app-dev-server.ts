@@ -1,6 +1,6 @@
 import { ModuleNode, ViteDevServer } from 'vite'
-import { KoaContext } from '../typings/server'
-import { appConf } from '../utils/config'
+import { KoaContext } from '@server/typings/server'
+import { appConf } from '@server/utils/config'
 import { renderToString } from '@vue/server-renderer'
 import { renderHeadToString } from '@vueuse/head'
 import path from 'path'

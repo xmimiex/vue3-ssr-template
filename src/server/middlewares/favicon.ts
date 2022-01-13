@@ -1,8 +1,8 @@
 import { Next } from 'koa'
 import path from 'path'
-import { KoaContext } from '../typings/server'
+import { KoaContext } from '@server/typings/server'
 import { readFileSync } from 'fs'
-import { appConf } from '../utils/config'
+import { appConf } from '@server/utils/config'
 
 const favicon = readFileSync(path.join(process.cwd(), '/dist/app', 'favicon.ico')).toString()
 

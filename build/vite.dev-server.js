@@ -6,13 +6,14 @@ import * as path from 'path'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(process.cwd(), 'src/app'),
+      '@app': path.resolve(process.cwd(), 'src/app'),
+      '@server': path.resolve(process.cwd(), 'src/server'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/app/assets/scss/tokens.scss";`,
+        additionalData: `@import "@app/assets/scss/tokens.scss";`,
       },
     },
   },

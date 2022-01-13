@@ -1,12 +1,12 @@
 import { app } from '@storybook/vue3'
 import { createI18n } from 'vue-i18n'
 import { createRouter, createWebHistory } from 'vue-router'
-import countryFormats from '@/i18n/formats/formats-FR.ts'
-import languageMessages from '@/i18n/messages/messages-fr.json'
+import countryFormats from '@app/i18n/formats/formats-FR.ts'
+import languageMessages from '@app/i18n/messages/messages-fr.json'
 import {createPinia} from "pinia";
-import useUser from '@/stores/user'
-import useSeo from '@/stores/seo'
-import useContext from '@/stores/context'
+import useUser from '@app/stores/user'
+import useSeo from '@app/stores/seo'
+import useContext from '@app/stores/context'
 import './styles.scss'
 
 // global i18n

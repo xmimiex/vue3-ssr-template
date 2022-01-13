@@ -1,5 +1,5 @@
-import { KoaContext } from '../../typings/server'
-import { appConf } from '../../utils/config'
+import { KoaContext } from '@server/typings/server'
+import { appConf } from '@server/utils/config'
 
 const requestIp = require('request-ip')
 const geoip = require('geoip-country')

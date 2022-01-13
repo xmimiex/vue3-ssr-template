@@ -1,7 +1,7 @@
 import createApp from './app'
-import useContext from '@/stores/context'
-import useConfig from '@/stores/config'
-import { AppKoaContext, Config } from '@/typings/ssr'
+import useContext from '@app/stores/context'
+import useConfig from '@app/stores/config'
+import { AppKoaContext, Config } from '@app/typings/ssr'
 
 export default async (ctx: AppKoaContext, conf: Config) => {
   const postCreateStore = async () => {

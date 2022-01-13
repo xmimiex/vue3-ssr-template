@@ -1,8 +1,8 @@
 import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
-import getRoutes from './routes'
-import isServerSide from '../utils/context'
-import { KoaContext } from '../../server/typings/server'
-import useConfig from '@/stores/config'
+import getRoutes from '@app/router/routes'
+import isServerSide from '@app/utils/context'
+import { KoaContext } from '@server/typings/server'
+import useConfig from '@app/stores/config'
 
 export default (serverContext?: KoaContext) => {
   const config = useConfig()

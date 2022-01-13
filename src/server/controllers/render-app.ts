@@ -1,11 +1,11 @@
 import path from 'path'
 import fs from 'fs'
-import { CreateAppFunction } from '../../app/typings/ssr'
-import { KoaContext } from '../typings/server'
+import { CreateAppFunction } from '@app/typings/ssr'
+import { KoaContext } from '@server/typings/server'
 import { renderToString } from '@vue/server-renderer'
 import { renderHeadToString } from '@vueuse/head'
-import { appConf } from '../utils/config'
-import render from '../utils/render'
+import { appConf } from '@server/utils/config'
+import render from '@server/utils/render'
 
 const manifest = __non_webpack_require__('../app/ssr-manifest.json')
 

@@ -1,4 +1,4 @@
-import { KoaContext } from '../typings/server'
+import { KoaContext } from '@server/typings/server'
 import { Next } from 'koa'
 import helmet from 'koa-helmet'
 

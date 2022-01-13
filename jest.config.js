@@ -14,7 +14,8 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage/',
   coverageReporters: ['lcov', 'html', 'text-summary'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@app/(.*)$': '<rootDir>/src/app/$1',
+    '^@server/(.*)$': '<rootDir>/src/server/$1',
   },
   transform: {
     '^.+\\.vue$': '@vue/vue3-jest',

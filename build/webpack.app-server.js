@@ -43,7 +43,7 @@ const config = {
             options: {
               sourceMap: false,
               additionalData: `
-                @import '~@/assets/scss/tokens.scss';
+                @import '~@app/assets/scss/tokens.scss';
               `,
             },
           },

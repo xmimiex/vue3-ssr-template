@@ -1,13 +1,13 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import compress from 'koa-compress'
-import renderAppController from './controllers/render-app'
-import securityMiddleware from './middlewares/security'
-import assetMiddleware from './middlewares/asset'
-import robotsMiddleware from './middlewares/robots'
-import faviconMiddleware from './middlewares/favicon'
-import countryLanguageMiddleware from './middlewares/country-language'
-import { appConf } from './utils/config'
+import renderAppController from '@server/controllers/render-app'
+import securityMiddleware from '@server/middlewares/security'
+import assetMiddleware from '@server/middlewares/asset'
+import robotsMiddleware from '@server/middlewares/robots'
+import faviconMiddleware from '@server/middlewares/favicon'
+import countryLanguageMiddleware from '@server/middlewares/country-language'
+import { appConf } from '@server/utils/config'
 
 const server = new Koa()
 const router = new Router()

@@ -25,11 +25,11 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import HelloWorld from '@/components/atoms/HelloWorld'
-import LocaleSwitcher from '@/components/atoms/LocaleSwitcher'
-import useUser from '@/stores/user'
-import useConfig from '@/stores/config'
-import isServerSide from '@/utils/context'
+import HelloWorld from '@app/components/atoms/HelloWorld'
+import LocaleSwitcher from '@app/components/atoms/LocaleSwitcher'
+import useUser from '@app/stores/user'
+import useConfig from '@app/stores/config'
+import isServerSide from '@app/utils/context'
 
 export default defineComponent({
   name: 'HomePage',

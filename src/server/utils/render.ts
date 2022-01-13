@@ -1,8 +1,8 @@
 import { Pinia } from 'pinia'
-import { ConfigThirdPartyScript } from '../../app/typings/ssr'
+import { ConfigThirdPartyScript } from '@app/typings/ssr'
 import { ParsedUrlQuery } from 'querystring'
-import { appConf } from '../utils/config'
-import { KoaContext } from '../typings/server'
+import { appConf } from '@server/utils/config'
+import { KoaContext } from '@server/typings/server'
 
 const renderState = (store: Pinia) => {
   if (!store) return ''

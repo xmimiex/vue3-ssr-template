@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Config } from '@/typings/ssr'
+import { Config } from '@app/typings/ssr'
 
 export type ConfigState = Config;
 

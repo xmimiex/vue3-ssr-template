@@ -37,6 +37,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts'],
+    alias: {
+      '@app': path.resolve(__dirname, '../src/app'),
+      '@server': path.resolve(__dirname, '../src/server'),
+    },
   },
   plugins: [
     new WebpackBar({
