@@ -6,89 +6,24 @@
 
 ## About
 
-This template is a prod ready starter for your Vue SSR application where you can do what you want at any level, client or server side. It follows the official [Vue SSR Guide](https://v3.vuejs.org/guide/ssr.html) and uses officials Vue dependencies needed for a large scale-up project regarding SEO, Internationalization.
+This template is a prod ready starter for your Vue SSR application where you can do what you want at any level, client or server side. 
+It follows the official [Vue SSR Guide](https://v3.vuejs.org/guide/ssr.html) and uses officials Vue dependencies needed for a large scale-up project regarding SEO, Internationalization.
 
 ## Technologies
 
-| Basics                                                 | Tooling                                               |
-| :----------------------------------------------------- | :---------------------------------------------------- |
-| [vue 3](https://github.com/vuejs/vue-next)             | [storybook](https://github.com/storybookjs/storybook) |
-| [vue-router](https://github.com/vuejs/vue-router-next) | [webpack 5](https://github.com/webpack/webpack)       |
-| [vue-i18n](https://github.com/intlify/vue-i18n-next)   | [vite](https://github.com/vitejs/vite)                |
-| [pinia](https://github.com/vuejs/pinia)                | [babel](https://babeljs.io/)                          |
-| [typescript](https://github.com/Microsoft/TypeScript)  | [eslint](https://www.npmjs.com/package/eslint)        |
-| [sass](https://github.com/sass/dart-sass)              | [stylelint](https://www.npmjs.com/package/stylelint)  |
-| [koa](https://github.com/koajs/koa)                    | [husky](https://typicode.github.io/husky/)            |
+| Vue eco-system                                         | Basics                                                | Tooling                                               |
+| :----------------------------------------------------- | :---------------------------------------------------- | :---------------------------------------------------- |
+| [vue 3](https://github.com/vuejs/vue-next)             | [typescript](https://github.com/Microsoft/TypeScript) | [husky](https://typicode.github.io/husky/)            |
+| [vue-router](https://github.com/vuejs/vue-router-next) | [storybook](https://github.com/storybookjs/storybook) | [webpack 5](https://github.com/webpack/webpack)       |
+| [vue-i18n](https://github.com/intlify/vue-i18n-next)   | [koa](https://github.com/koajs/koa)                	 | [vite](https://github.com/vitejs/vite)                |
+| [pinia](https://github.com/vuejs/pinia)                | [swc](https://github.com/swc-project/swc)             | [stylelint](https://www.npmjs.com/package/stylelint)  |
+| [head](https://github.com/vueuse/head)                 | [sass](https://github.com/sass/dart-sass)		     | [eslint](https://www.npmjs.com/package/eslint)     	 |
 
-## Project setup
 
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
+## Documentation
 
-```
-yarn serve:dev
-```
-
-Vite is used to serve the application in "dev-server" mode.
-
-### Compiles and minifies for production
-
-```
-yarn build
-```
-
-This script builds :
-
-- application : client part and server part (built by Webpack 5)
-- nodejs server : ssr part (built by tsc)
-
-> Then build & start Docker image
-
-```
-yarn build:docker
-yarn serve:docker
-```
-
-By default, application runs with the config file production.yml (an alias to the one from the config folder)
-
-> Or simply start application
-
-```
-yarn serve:prod
-```
-
-### Run your unit tests
-
-```
-yarn test
-```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Analyze bundle resources
-
-```
-yarn analyz
-```
-
-### Compiles Storybook and hot-reloads for development
-
-```
-yarn serve:storybook
-```
-
-### Compiles Storybook for production
-
-```
-yarn build:storybook
-```
+https://xmimiex.github.io/vue3-ssr-template/
 
 ## Special thanks 💚
 

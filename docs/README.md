@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /hero.jpg
-tagline: Production ready - Vue 3 SSR
+tagline: Production Ready - Vue 3 SSR
 
 actions:
 - text: Get Started
@@ -13,17 +13,15 @@ actions:
 
 features:
 - title: Vue3 SSR
-  details: Server Side Rendering
-- title: State Management
-  details: TODO
+  details: Application's code runs on both the server and the client. Server Side Rendering helps you achieve the best possible initial load performance
 - title: I18n
-  details: Internationalization
-- title: Routing
-  details: TODO
+  details: Automatically and on the fly, the good messages, formats and currency are loaded for your selected locale
 - title: SEO
-  details: TODO
+  details: The search engine crawlers will directly see the fully rendered page because, using SSR, content and meta-data of all pages are generated server-side
+- title: Hybrid
+  details: Only the first page is generated from server-side, all the rest of navigation is made client-side
 - title: Production Ready
-  details: Everything you need to start a production ready web application
+  details: Everything you need to start a large scale-up web application
 
 footer: Made with ❤️
 ---
