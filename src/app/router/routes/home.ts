@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import { ROUTES } from '../constants'
+import { ROUTES } from '@app/router/constants'
 
 export default (): RouteRecordRaw => ({
   path: '',

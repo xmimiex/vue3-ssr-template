@@ -5,8 +5,8 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useHead } from '@vueuse/head'
-import useSeo from '@/stores/seo'
-import useContext from '@/stores/context'
+import useSeo from '@app/stores/seo'
+import useContext from '@app/stores/context'
 
 export default defineComponent({
   setup() {

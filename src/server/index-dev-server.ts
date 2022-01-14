@@ -3,8 +3,8 @@ import * as path from 'path'
 import Koa from 'koa'
 import Router from 'koa-router'
 import c2k from 'koa-connect'
-import countryLanguageMiddleware from './middlewares/country-language'
-import renderAppDevServerController from './controllers/render-app-dev-server'
+import countryLanguageMiddleware from '@server/middlewares/country-language'
+import renderAppDevServerController from '@server/controllers/render-app-dev-server'
 
 (async () => {
   const root = process.cwd()

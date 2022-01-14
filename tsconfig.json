@@ -20,8 +20,11 @@
       "src/**/*.d.ts",
     ],
     "paths": {
-      "@/*": [
+      "@app/*": [
         "src/app/*"
+      ],
+      "@server/*": [
+        "src/server/*"
       ]
     },
     "lib": [

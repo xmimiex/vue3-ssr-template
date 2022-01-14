@@ -1,5 +1,5 @@
 // shared types between app and server
-import { KoaContext } from '../../server/typings/server'
+import { KoaContext } from '@server/typings/server'
 import { App } from 'vue'
 import { Router } from 'vue-router'
 import { Pinia } from 'pinia'

@@ -16,8 +16,8 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import useConfig from '@/stores/config'
-import useContext from '@/stores/context'
+import useConfig from '@app/stores/config'
+import useContext from '@app/stores/context'
 
 interface LocaleOption {
   value: string

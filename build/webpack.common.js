@@ -54,7 +54,8 @@ const config = {
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '../src/app'),
+      '@app': path.resolve(__dirname, '../src/app'),
+      '@server': path.resolve(__dirname, '../src/server'),
     },
     fallback: {
       fs: false,

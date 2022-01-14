@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import useContext from '@/stores/context'
+import useContext from '@app/stores/context'
 
 export default async () => {
   const context = useContext()

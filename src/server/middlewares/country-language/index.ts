@@ -1,4 +1,4 @@
-import { KoaContext } from '../../typings/server'
+import { KoaContext } from '@server/typings/server'
 import { Next } from 'koa'
 import {
   countryDetection,
@@ -6,8 +6,8 @@ import {
   isCountryLanguageSupported,
   isCountrySupported,
 } from './utils'
-import { appConf } from '../../utils/config'
-import { doRedirect301 } from '../../utils/redirect'
+import { appConf } from '@server/utils/config'
+import { doRedirect301 } from '@server/utils/redirect'
 
 const {
   headers: {

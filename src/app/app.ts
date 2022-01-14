@@ -1,11 +1,11 @@
 import { createSSRApp } from 'vue'
 import { createHead } from '@vueuse/head'
 import App from './App.vue'
-import createRouter from './router'
-import createStore from './stores'
+import createRouter from '@app/router'
+import createStore from '@app/stores'
 import { Pinia } from 'pinia'
-import createI18n from './i18n'
-import { AppKoaContext } from '@/typings/ssr'
+import createI18n from '@app/i18n'
+import { AppKoaContext } from '@app/typings/ssr'
 
 interface CreateAppArgs {
   serverContext?: AppKoaContext

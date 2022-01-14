@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
-import { ROUTES } from '../constants'
-import category from '@/router/routes/category'
-import home from '@/router/routes/home'
+import { ROUTES } from '@app/router/constants'
+import category from '@app/router/routes/category'
+import home from '@app/router/routes/home'
 
 export default (): RouteRecordRaw => ({
   path: '/:country/:language',

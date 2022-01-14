@@ -1,7 +1,7 @@
 import serve from 'koa-static'
 import path from 'path'
-import { appConf } from '../utils/config'
-import { KoaContext } from '../typings/server'
+import { appConf } from '@server/utils/config'
+import { KoaContext } from '@server/typings/server'
 import mount from 'koa-mount'
 import { Next } from 'koa'
 
