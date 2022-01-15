@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocaleSwitcher should render component correctly 1`] = `
+<div
+  class="locale-switcher"
+>
+  <label
+    for="locale-switcher"
+  >
+    Changer de région
+  </label>
+  <select
+    id="locale-switcher"
+  >
+    
+    <option
+      value="/UK/en"
+    >
+      Angleterre - en
+    </option>
+    <option
+      value="/FR/fr"
+    >
+      France - fr
+    </option>
+    <option
+      value="/CH/fr"
+    >
+      Suisse - fr
+    </option>
+    <option
+      value="/CH/it"
+    >
+      Suisse - it
+    </option>
+    <option
+      value="/CH/en"
+    >
+      Suisse - en
+    </option>
+    
+  </select>
+</div>
+`;

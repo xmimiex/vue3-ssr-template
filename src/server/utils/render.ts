@@ -4,17 +4,17 @@ import { ParsedUrlQuery } from 'querystring'
 import { appConf } from '@server/utils/config'
 import { KoaContext } from '@server/typings/server'
 
-const renderState = (store: Pinia) => {
+export const renderState = (store?: Pinia) => {
   if (!store) return ''
   return `<script>window.__INITIAL_STATE__=${JSON.stringify(store.state.value)}</script>`
 }
 
-const renderStyles = (styles: string) =>
+export const renderStyles = (styles = '') => styles ?
   `<style>\
 ${styles}\
-</style>`
+</style>` : ''
 
-const convertScriptConfigToHtml = (scriptConfig: ConfigThirdPartyScript) =>
+export const convertScriptConfigToHtml = (scriptConfig: ConfigThirdPartyScript) =>
   `<script \
 ${scriptConfig.uri ? `src="${scriptConfig.uri}"` : ''} \
 ${scriptConfig.id ? `id="${scriptConfig.id}"` : ''} \
@@ -23,7 +23,7 @@ ${scriptConfig.async ? 'async' : ''}> \
 ${scriptConfig.body || ''}\
 </script>`
 
-const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'head' | 'body') => {
+export const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'head' | 'body') => {
   if (!appConf || !appConf.thirdPartyScripts || ('ignore-third-party' in query)) return ''
 
   return appConf.thirdPartyScripts

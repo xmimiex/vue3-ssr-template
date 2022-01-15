@@ -8,7 +8,7 @@ export interface SeoState {
 
 export default defineStore('seo', {
   state: () => ({
-    title: 'Vue3 SSR Template',
+    title: 'Maisons du Monde',
     description: '',
     robots: '',
   } as SeoState),

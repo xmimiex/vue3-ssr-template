@@ -64,9 +64,10 @@ export default defineComponent({
   .header {
     position: fixed;
   }
-}
 
-.image {
-  max-width: 100%;
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
 }
 </style>
