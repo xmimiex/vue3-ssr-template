@@ -1,6 +1,6 @@
 import createI18n from '.'
 import { setActivePinia, createPinia } from 'pinia'
-import useContext from '@/stores/context'
+import useContext from '@app/stores/context'
 
 const defaultLanguage = {
   UK: 'en',

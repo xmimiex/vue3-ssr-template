@@ -11,7 +11,7 @@ export default async (ctx: AppKoaContext, conf: Config) => {
     context.$patch({ country, language })
 
     const config = useConfig()
-    config.$patch({ ...conf })
+    config.setConfig(conf)
   }
 
   const { app, router, store, head } = await createApp({

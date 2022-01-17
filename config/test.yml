@@ -19,11 +19,6 @@ internationalization:
       - it
       - en
 
-unleash:
-  url: https://git.maisonsdumonde.net/api/v4/feature_flags/unleash/2145
-  instanceId: 8th7iT2kC7UXhSaMndZu
-  refreshInterval: 5000
-
 cacheControl:
   # Cache duration in minutes
   pages:

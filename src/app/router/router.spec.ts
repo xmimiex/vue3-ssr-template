@@ -1,7 +1,6 @@
 import createRouter from '.'
 import { setActivePinia, createPinia } from 'pinia'
 import { ROUTES } from './constants'
-import notFound from './routes/not-found'
 
 describe('Router', () => {
   beforeEach(() => {

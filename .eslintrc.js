@@ -67,5 +67,14 @@ module.exports = {
         indent: 'off',
       },
     },
+    {
+      files: [
+        '**/*.{spec,stories}.{j,t}s?(x)',
+        '**/server/typings/server.d.ts',
+      ],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
   ],
 }

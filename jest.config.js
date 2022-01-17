@@ -14,12 +14,13 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage/',
   coverageReporters: ['lcov', 'html', 'text-summary'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/app/$1',
+    '^@app/(.*)$': '<rootDir>/src/app/$1',
+    '^@server/(.*)$': '<rootDir>/src/server/$1',
   },
   transform: {
     '^.+\\.vue$': '@vue/vue3-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.(ts|js|tsx)?$': 'ts-jest',
+    '^.+\\.(t|j)sx?$': ['@swc/jest', swcConfigs],
     //'\\.(gql|graphql)$': 'jest-transform-graphql'
   },
   testEnvironment: 'jsdom',

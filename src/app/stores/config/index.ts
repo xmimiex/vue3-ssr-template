@@ -1,13 +1,22 @@
 import { defineStore } from 'pinia'
 import { Config } from '@app/typings/ssr'
 
-export type ConfigState = Config;
+interface Context {
+  environment: string
+}
+interface CacheControl {
+  pages: Record<string, number>
+}
+
+export interface ConfigState extends Omit<Config, 'context' | 'assetsDir' | 'unleash' | 'cacheControl'> {
+  context: Context
+  cacheControl: CacheControl
+}
 
 export default defineStore('config', {
   state: () => ({
     context: {
       environment: '',
-      port: 0,
     },
     assetsDir: '',
     headers: {},
@@ -22,4 +31,15 @@ export default defineStore('config', {
     },
     thirdPartyScripts: [],
   } as ConfigState),
+  actions: {
+    setConfig(config: Config) {
+      const { context, headers, cacheControl, internationalization, thirdPartyScripts } = config
+
+      this.context = context
+      this.headers = headers
+      this.cacheControl = { pages: cacheControl.pages }
+      this.internationalization = internationalization
+      this.thirdPartyScripts = thirdPartyScripts
+    },
+  },
 })

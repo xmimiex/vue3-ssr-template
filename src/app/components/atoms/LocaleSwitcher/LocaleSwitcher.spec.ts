@@ -1,9 +1,9 @@
 import LocaleSwitcher from '.'
 import { mount } from '@vue/test-utils'
-import useConfig from '@/stores/config'
-import useContext from '@/stores/context'
+import useConfig from '@app/stores/config'
+import useContext from '@app/stores/context'
 import { createTestingPinia } from '@pinia/testing'
-import createI18n from '@/i18n'
+import createI18n from '@app/i18n'
 
 describe('LocaleSwitcher', () => {
 
