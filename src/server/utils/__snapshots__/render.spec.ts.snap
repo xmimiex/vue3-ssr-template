@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render convertScriptConfigToHtml should return inline script with body 1`] = `
+<script id="body-script">
+  console.log("hello")
+</script>
+`;
+
+exports[`render convertScriptConfigToHtml should return inline script with body 2`] = `<script src="https://third-party-fake-domain/third-party-fake-path.js" id="with-url"> </script>`;
+
+exports[`render renderThirdPartyScripts should render script loaded from config file 1`] = `
+<script id="fake-body">
+  (function() {
+    console.log('loading third-party with body');
+  })();
+</script>
+`;

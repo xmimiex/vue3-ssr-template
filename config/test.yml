@@ -1,0 +1,41 @@
+context:
+  environment: test
+
+headers:
+  countryLanguage: "x-country-language"
+
+assetsDir: assets
+
+internationalization:
+  defaultCountry: FR
+  defaultLanguage: fr
+  languagesForCountry:
+    UK:
+      - en
+    FR:
+      - fr
+    CH:
+      - fr
+      - it
+      - en
+
+cacheControl:
+  # Cache duration in minutes
+  pages:
+    category: 360
+    homeWithoutContext: 15552000
+    home: 15552000
+  static:
+    robots: 86400
+    favicon: 15552000
+    asset: 15552000
+
+thirdPartyScripts:
+  - id: fake-uri
+    uri: https://third-party-fake-domain/third-party-fake-path.js
+    node: body
+    async: true
+    defer: true
+  - id: fake-body
+    body: (function () { console.log('loading third-party with body'); } )();
+    node: head

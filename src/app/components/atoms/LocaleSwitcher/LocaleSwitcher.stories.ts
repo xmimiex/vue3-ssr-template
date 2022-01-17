@@ -22,9 +22,9 @@ const Template: Story = () => ({
         defaultCountry: 'FR',
         defaultLanguage: 'fr',
         languagesForCountry: {
-          UK: [ 'en' ],
-          FR: [ 'fr' ],
-          CH: [ 'fr', 'it', 'en' ],
+          UK: ['en'],
+          FR: ['fr'],
+          CH: ['fr', 'it', 'en'],
         },
       },
     })

@@ -24,49 +24,50 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
-import HelloWorld from '@app/components/atoms/HelloWorld'
-import LocaleSwitcher from '@app/components/atoms/LocaleSwitcher'
-import useUser from '@app/stores/user'
-import useConfig from '@app/stores/config'
-import isServerSide from '@app/utils/context'
+  import { computed, defineComponent } from 'vue'
+  import HelloWorld from '@app/components/atoms/HelloWorld'
+  import LocaleSwitcher from '@app/components/atoms/LocaleSwitcher'
+  import useUser from '@app/stores/user'
+  import useConfig from '@app/stores/config'
+  import isServerSide from '@app/utils/context'
 
-export default defineComponent({
-  name: 'HomePage',
-  components: {
-    HelloWorld,
-    LocaleSwitcher,
-  },
-  setup() {
-    const user = useUser()
-    const name = computed(() => user.name)
+  export default defineComponent({
+    name: 'HomePage',
+    components: {
+      HelloWorld,
+      LocaleSwitcher,
+    },
+    setup() {
+      const user = useUser()
+      const name = computed(() => user.name)
 
-    const config = useConfig()
-    const environment = computed(() => config.context.environment)
+      const config = useConfig()
+      const environment = computed(() => config.context.environment)
 
-    if (isServerSide()) {
-      user.$patch({ name: 'Robin' })
-    }
+      if (isServerSide()) {
+        user.$patch({ name: 'Robin' })
+      }
 
-    return {
-      name,
-      environment,
-    }
-  },
-})
+      return {
+        name,
+        environment,
+      }
+    },
+  })
 </script>
 
 <style lang="scss">
-.homepage {
-  color: $custom-blue;
-  text-align: center;
+  .homepage {
+    color: $custom-blue;
+    text-align: center;
 
-  .header {
-    position: fixed;
+    .header {
+      position: fixed;
+    }
+
+    .image {
+      max-width: 100%;
+      height: auto;
+    }
   }
-}
-
-.image {
-  max-width: 100%;
-}
 </style>

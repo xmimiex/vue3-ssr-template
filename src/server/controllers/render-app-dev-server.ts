@@ -52,10 +52,12 @@ export default async (ctx: KoaContext, vite: ViteDevServer)=> {
 
     ctx.status = 200
     ctx.body = bodyHtml
-  } catch (e: any) {
-    vite.ssrFixStacktrace(e)
-    console.log(e.stack)
-    ctx.status = 200
-    ctx.body = e.stack
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      vite.ssrFixStacktrace(e)
+      console.log(e.stack)
+      ctx.status = 500
+      ctx.body = e.stack
+    }
   }
 }
