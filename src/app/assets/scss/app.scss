@@ -1,0 +1,13 @@
+// ================================================================================================
+// @app.scss
+// This file is the style entry point of vue3-ssr-template app.
+// This file is imported in App.vue, and will have all of his style extracted.
+// It should contain all of the global/shared classes (and classes only).
+// ================================================================================================
+
+@import "./reset/index";
+
+html,
+body {
+  font-family: $font-family-safe;
+}

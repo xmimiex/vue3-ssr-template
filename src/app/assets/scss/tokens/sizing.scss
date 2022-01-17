@@ -1,0 +1,16 @@
+// stylelint-disable property-no-unknown, selector-pseudo-class-no-unknown
+@use "sass:math";
+
+$fixed-sizing-s: rem-calc(16px);
+$fixed-sizing-sm: rem-calc(20px);
+$fixed-sizing-m: rem-calc(24px);
+$fixed-sizing-l: rem-calc(32px);
+$fixed-sizing-xl: rem-calc(48px);
+$ratio-sizing-square: math.div(1, 1);
+$ratio-sizing-4x3: math.div(3, 4);
+$ratio-sizing-16x9: math.div(9, 16);
+$ratio-sizings-map: (
+  square: $ratio-sizing-square,
+  "4x3": $ratio-sizing-4x3,
+  "16x9": $ratio-sizing-16x9
+);

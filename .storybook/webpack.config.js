@@ -11,7 +11,7 @@ module.exports = async ({ config }) => {
         loader: 'sass-loader',
         options: {
           additionalData: `
-            @import '~@app/assets/scss/tokens.scss';
+            @import '~@app/assets/scss/dna.scss';
           `
         }
       }

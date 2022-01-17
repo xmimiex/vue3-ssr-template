@@ -28,7 +28,3 @@
     },
   })
 </script>
-
-<style lang="scss">
-  @import url("./assets/scss/index.scss");
-</style>

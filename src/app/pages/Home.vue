@@ -58,7 +58,7 @@
 
 <style lang="scss">
   .homepage {
-    color: $custom-blue;
+    color: $color-standard-1;
     text-align: center;
 
     .header {

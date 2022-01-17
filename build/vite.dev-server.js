@@ -13,7 +13,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@app/assets/scss/tokens.scss";`,
+        additionalData: `@import "@app/assets/scss/dna.scss";`,
       },
     },
   },

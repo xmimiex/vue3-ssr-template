@@ -13,8 +13,8 @@
  ┃ ┣ 📂app
  ┃ ┃ ┣ 📂assets
  ┃ ┃ ┃ ┣ 📂scss
- ┃ ┃ ┃ ┃ ┣ 📜index.scss
- ┃ ┃ ┃ ┃ ┗ 📜tokens.scss
+ ┃ ┃ ┃ ┃ ┣ 📜app.scss
+ ┃ ┃ ┃ ┃ ┗ 📜dna.scss
  ┃ ┃ ┣ 📂components // you can arrange your components as you like but we recommend using atoms molecules and organisms 
  ┃ ┃ ┃ ┗ 📂atoms
  ┃ ┃ ┣ 📂i18n

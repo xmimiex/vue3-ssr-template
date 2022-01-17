@@ -1,0 +1,33 @@
+// stylelint-disable property-no-unknown, selector-pseudo-class-no-unknown, length-zero-no-unit
+@use "sass:math";
+@use "sass:list";
+
+@function strip-unit($num) {
+  @return math.div($num, ($num * 0 + 1));
+}
+
+@function convert-to-rem($value, $base-value: $font-rem-base) {
+  $value: math.div(strip-unit($value), strip-unit($base-value) * 1rem);
+
+  @if $value == 0rem {
+    $value: 0; // Turn 0rem into 0
+  }
+
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $font-rem-base) {
+  $max: list.length($values);
+
+  @if $max == 1 {
+    @return convert-to-rem(nth($values, 1), $base-value);
+  }
+
+  $rem-values: ();
+
+  @for $i from 1 through $max {
+    $rem-values: list.append($rem-values, convert-to-rem(list.nth($values, $i), $base-value));
+  }
+
+  @return $rem-values;
+}

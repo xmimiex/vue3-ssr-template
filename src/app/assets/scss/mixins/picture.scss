@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@mixin picture($format: "square") {
+  @if map-has-key($ratio-sizings-map, $format) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding-top: map.get($ratio-sizings-map, $format);
+    position: relative;
+    width: 100%;
+
+    > img {
+      position: absolute;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

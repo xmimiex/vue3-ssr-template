@@ -6,6 +6,7 @@ import createStore from '@app/stores'
 import { Pinia } from 'pinia'
 import createI18n from '@app/i18n'
 import { AppKoaContext } from '@app/typings/ssr'
+import '@app/assets/scss/app.scss'
 
 interface CreateAppArgs {
   serverContext?: AppKoaContext
