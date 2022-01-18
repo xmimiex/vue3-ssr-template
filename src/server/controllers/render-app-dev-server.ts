@@ -18,7 +18,7 @@ export default async (ctx: KoaContext, vite: ViteDevServer)=> {
     const collectCssUrls = (mods: Set<ModuleNode>, styles: Map<string, string>) => {
       for (const mod of mods) {
         if (mod.ssrModule && mod.file && mod.id) {
-          if (mod.file.endsWith('.css') || /\?vue&type=style/.test(mod.id)) {
+          if (mod.file.endsWith('css') || /\?vue&type=style/.test(mod.id)) {
             styles.set(mod.url, mod.ssrModule.default)
           }
         }
