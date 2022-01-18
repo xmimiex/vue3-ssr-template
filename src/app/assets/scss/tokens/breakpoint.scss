@@ -1,0 +1,9 @@
+// stylelint-disable property-no-unknown, selector-pseudo-class-no-unknown
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1025px;
+$breakpoint-large: 1441px;
+$breakpoints-map: (
+  "tablet": $breakpoint-tablet,
+  "desktop": $breakpoint-desktop,
+  "large": $breakpoint-large
+);

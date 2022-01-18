@@ -1,0 +1,11 @@
+@mixin transition-bottom-slide($duration) {
+  .bottom-slide-enter-active,
+  .bottom-slide-leave-active {
+    transition: transform $duration ease-out;
+  }
+
+  .bottom-slide-enter-from,
+  .bottom-slide-leave-to {
+    transform: translateY(100%);
+  }
+}

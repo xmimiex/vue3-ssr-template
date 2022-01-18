@@ -1,0 +1,8 @@
+@mixin media-up($device) {
+  @if map-has-key($breakpoints-map, $device) {
+    @media only screen and (min-width: map-get($breakpoints-map, $device)) {
+
+      @content;
+    }
+  }
+}
