@@ -17,6 +17,7 @@
     "serve:dev": "cross-env VITE=1 ts-node -r tsconfig-paths/register src/server/index-dev-server",
     "serve:dev-debug": "cross-env VITE=1 DEBUG=vite:* ts-node -r tsconfig-paths/register src/server/index-dev-server",
     "serve:prod": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=1024\" node dist/server --host 0.0.0.0",
+    "serve:prod-debug": "cross-env NODE_ENV=production NODE_OPTIONS=\"--max-old-space-size=1024\" node --inspect dist/server --host 0.0.0.0",
     "lint": "eslint --ext .ts,.js,.vue . && yarn stylelint 'src/**/*.{vue,css,scss}'",
     "lint:fix": "eslint --ext .ts,.js,.vue . --fix && yarn stylelint 'src/**/*.{vue,css,scss}' --fix",
     "test": "jest",

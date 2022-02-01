@@ -1,23 +1,17 @@
 import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
-import getRoutes from '@app/router/routes'
 import isServerSide from '@app/utils/context'
-import { KoaContext } from '@server/typings/server'
-import useConfig from '@app/stores/config'
+import { ROUTES } from './constants'
 
-export default (serverContext?: KoaContext) => {
-  const config = useConfig()
+export default () => {
   const router = createRouter({
     history: isServerSide() ? createMemoryHistory() : createWebHistory(),
-    routes: getRoutes(serverContext),
+    routes: [
+      {
+        path: '/',
+        name: ROUTES.HOME,
+        component: () => import(/* webpackChunkName: "home" */ '../pages/Home.vue'),
+      },
+    ],
   })
-
-  router.beforeEach((to, _from, next) => {
-    const cacheDuration = config.cacheControl.pages[to.name as string] || null
-    if (serverContext && cacheDuration) {
-      serverContext.set('Cache-Control', `max-age=0, s-maxage=${cacheDuration}, public`)
-    }
-    next()
-  })
-
   return router
 }

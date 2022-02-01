@@ -31,6 +31,9 @@ export default defineStore('config', {
     },
     thirdPartyScripts: [],
   } as ConfigState),
+  getters: {
+    getEnvironment: (state) => state.context.environment,
+  },
   actions: {
     setConfig(config: Config) {
       const { context, headers, cacheControl, internationalization, thirdPartyScripts } = config

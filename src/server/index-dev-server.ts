@@ -3,7 +3,6 @@ import * as path from 'path'
 import Koa from 'koa'
 import Router from 'koa-router'
 import c2k from 'koa-connect'
-import countryLanguageMiddleware from '@server/middlewares/country-language'
 import renderAppDevServerController from '@server/controllers/render-app-dev-server'
 
 (async () => {
@@ -22,7 +21,6 @@ import renderAppDevServerController from '@server/controllers/render-app-dev-ser
 
   // use vite's connect instance as middleware
   devServer.use(c2k(vite.middlewares))
-  devServer.use(countryLanguageMiddleware)
   devServer.use(router.middleware())
 
   router.get('/(.*)', (ctx) => renderAppDevServerController(ctx, vite))

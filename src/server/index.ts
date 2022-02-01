@@ -6,7 +6,6 @@ import securityMiddleware from '@server/middlewares/security'
 import assetMiddleware from '@server/middlewares/asset'
 import robotsMiddleware from '@server/middlewares/robots'
 import faviconMiddleware from '@server/middlewares/favicon'
-import countryLanguageMiddleware from '@server/middlewares/country-language'
 import { appConf } from '@server/utils/config'
 
 const server = new Koa()
@@ -17,7 +16,6 @@ server.use(securityMiddleware)
 server.use(assetMiddleware)
 server.use(robotsMiddleware)
 server.use(faviconMiddleware)
-server.use(countryLanguageMiddleware)
 server.use(router.middleware())
 
 router.get('/(.*)', renderAppController)
