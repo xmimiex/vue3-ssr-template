@@ -1,6 +1,7 @@
 context:
   environment: local
   port: 3000
+  cluster: true
 
 headers:
   countryLanguage: "x-country-language"

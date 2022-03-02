@@ -1,5 +1,6 @@
 context:
   environment: test
+  cluster: false
 
 headers:
   countryLanguage: "x-country-language"

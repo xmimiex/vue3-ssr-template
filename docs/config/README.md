@@ -13,7 +13,11 @@
 context:
   environment: production
   port: 8080
+  cluster: true
 ```
+
+Enable or disable cluster. If enable, the server will fork processes and use all available cpu cores.
+In some case, it is better to disable it if you are using PM2 or other orchestrator that handle replication.
 
 ## Headers
 
