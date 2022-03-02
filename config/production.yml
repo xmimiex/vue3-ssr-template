@@ -1,6 +1,7 @@
 context:
   environment: production
   port: 8080
+  cluster: true
 
 headers:
   countryLanguage: "x-country-language"
