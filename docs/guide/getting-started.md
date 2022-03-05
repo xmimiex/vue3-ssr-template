@@ -67,3 +67,24 @@ yarn serve:storybook
 ```
 yarn build:storybook
 ```
+
+## Debug application
+
+Build application then start it in production mode "debug"
+
+```
+yarn build
+yarn serve:prod-debug
+```
+
+Execute some requests to application to observe memory usage of NodeJS server
+
+```
+ab -n 10000 -c 100 -k http://localhost:3000/
+```
+
+## Upgrade dependencies
+
+```
+yarn upgrade-interactive --latest
+```
