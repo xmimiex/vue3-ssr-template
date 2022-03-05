@@ -1,0 +1,1 @@
+const e={key:"v-a32685ce",path:"/guide/folder-structure.html",title:"Folder structure",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1646497411e3,contributors:[{name:"xmimiex",email:"benjamin.henique@gmail.com",commits:2},{name:"bhenique",email:"bhenique@galerieslafayette.com",commits:1}]},filePathRelative:"guide/folder-structure.md"};export{e as data};

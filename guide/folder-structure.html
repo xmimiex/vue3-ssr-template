@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/favicon.ico"><title>Folder structure | Vue3 SSR Template</title><meta name="description" content="Prod ready starter for your large scale-up Vue SSR application regarding SEO, Internationalization">
+    <link rel="modulepreload" href="/vue3-ssr-template/assets/app.a967d9a0.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/folder-structure.html.6f7234d6.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/folder-structure.html.f2de2344.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/vue3-ssr-template/assets/style.8af441f7.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/vue3-ssr-template/" class=""><img class="logo" src="/vue3-ssr-template/hero.jpg" alt="Vue3 SSR Template"><span class="site-name can-hide">Vue3 SSR Template</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/vue3-ssr-template/guide/" class="router-link-active" aria-label="Guide"><!--[--><!--]--> Guide <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue3-ssr-template/config/" class="" aria-label="Config"><!--[--><!--]--> Config <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/xmimiex/vue3-ssr-template" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/vue3-ssr-template/guide/" class="router-link-active" aria-label="Guide"><!--[--><!--]--> Guide <!--[--><!--]--></a></div><div class="navbar-item"><a href="/vue3-ssr-template/config/" class="" aria-label="Config"><!--[--><!--]--> Config <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/xmimiex/vue3-ssr-template" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Guide <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/vue3-ssr-template/guide/" class="router-link-active sidebar-item" aria-label="Introduction"><!--[--><!--]--> Introduction <!--[--><!--]--></a><!----></li><li><a href="/vue3-ssr-template/guide/getting-started.html" class="sidebar-item" aria-label="Project setup"><!--[--><!--]--> Project setup <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/vue3-ssr-template/guide/folder-structure.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="Folder structure"><!--[--><!--]--> Folder structure <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><a href="/vue3-ssr-template/config/" class="sidebar-item sidebar-heading" aria-label="Config"><!--[--><!--]--> Config <!--[--><!--]--></a><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="folder-structure" tabindex="-1"><a class="header-anchor" href="#folder-structure" aria-hidden="true">#</a> Folder structure</h1><div class="language-json ext-json line-numbers-mode"><pre class="language-json"><code>📦vue3-ssr-template
+ ┣ 📂config <span class="token comment">// contains configuration for each environments</span>
+ ┃ ┣ 📜local.yml
+ ┃ ┗ 📜production.yml
+ ┣ 📂public
+ ┃ ┣ 📜favicon.ico
+ ┃ ┣ 📜index.html
+ ┃ ┗ 📜robots.txt <span class="token comment">// robots configuration</span>
+ ┣ 📂src
+ ┃ ┣ 📂app
+ ┃ ┃ ┣ 📂assets
+ ┃ ┃ ┃ ┣ 📂scss
+ ┃ ┃ ┃ ┃ ┣ 📜app.scss
+ ┃ ┃ ┃ ┃ ┗ 📜dna.scss
+ ┃ ┃ ┣ 📂components <span class="token comment">// you can arrange your components as you like but we recommend using atoms molecules and organisms </span>
+ ┃ ┃ ┃ ┗ 📂atoms
+ ┃ ┃ ┣ 📂i18n
+ ┃ ┃ ┃ ┣ 📂formats
+ ┃ ┃ ┃ ┃ ┣ 📜formats-CH.ts
+ ┃ ┃ ┃ ┃ ┣ 📜formats-FR.ts
+ ┃ ┃ ┃ ┃ ┗ 📜formats-UK.ts
+ ┃ ┃ ┃ ┣ 📂messages <span class="token comment">// localization</span>
+ ┃ ┃ ┃ ┃ ┣ 📜messages-en.json
+ ┃ ┃ ┃ ┃ ┣ 📜messages-fr.json
+ ┃ ┃ ┃ ┃ ┗ 📜messages-it.json
+ ┃ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┣ 📂pages <span class="token comment">// all entry pages</span>
+ ┃ ┃ ┃ ┣ 📜Empty.vue
+ ┃ ┃ ┃ ┣ 📜Home.vue
+ ┃ ┃ ┃ ┗ 📜NotFound.vue
+ ┃ ┃ ┣ 📂router
+ ┃ ┃ ┃ ┣ 📂routes <span class="token comment">// create a separate file for each routes</span>
+ ┃ ┃ ┃ ┃ ┣ 📜category.ts
+ ┃ ┃ ┃ ┃ ┣ 📜home.ts
+ ┃ ┃ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┃ ┃ ┣ 📜main.ts
+ ┃ ┃ ┃ ┃ ┗ 📜not-found.ts
+ ┃ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┣ 📂stores
+ ┃ ┃ ┣ 📂typings
+ ┃ ┃ ┣ 📂utils
+ ┃ ┃ ┣ 📜app.ts
+ ┃ ┃ ┣ 📜App.vue
+ ┃ ┃ ┣ 📜entry-client.ts
+ ┃ ┃ ┣ 📜entry-server.ts
+ ┃ ┗ 📂server
+ ┃ ┃ ┣ 📂controllers
+ ┃ ┃ ┣ 📂middlewares
+ ┃ ┃ ┣ 📂typings
+ ┃ ┃ ┣ 📂utils
+ ┃ ┃ ┣ 📜index-dev-server.ts
+ ┃ ┃ ┣ 📜index.ts
+ ┣ 📜.env
+ ┣ 📜package.json
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: benjamin.henique@gmail.com">xmimiex</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: bhenique@galerieslafayette.com">bhenique</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/vue3-ssr-template/guide/getting-started.html" class="" aria-label="Project setup"><!--[--><!--]--> Project setup <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/vue3-ssr-template/assets/app.a967d9a0.js" defer></script>
+  </body>
+</html>

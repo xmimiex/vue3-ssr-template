@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/favicon.ico"><title>Vue3 SSR Template</title><meta name="description" content="Prod ready starter for your large scale-up Vue SSR application regarding SEO, Internationalization">
+    <link rel="modulepreload" href="/vue3-ssr-template/assets/app.a967d9a0.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/404.html.f166316b.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/404.html.bee13de6.js"><link rel="modulepreload" href="/vue3-ssr-template/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/vue3-ssr-template/assets/style.8af441f7.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><div class="theme-default-content"><h1>404</h1><blockquote>That&#39;s a Four-Oh-Four.</blockquote><a href="/vue3-ssr-template/" class="">Take me home</a></div></div><!----><!--]--></div>
+    <script type="module" src="/vue3-ssr-template/assets/app.a967d9a0.js" defer></script>
+  </body>
+</html>
