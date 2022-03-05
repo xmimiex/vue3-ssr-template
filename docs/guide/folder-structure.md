@@ -26,6 +26,7 @@
  ┃ ┃ ┃ ┃ ┣ 📜messages-en.json
  ┃ ┃ ┃ ┃ ┣ 📜messages-fr.json
  ┃ ┃ ┃ ┃ ┗ 📜messages-it.json
+ ┃ ┃ ┃ ┣ 📜index.ts
  ┃ ┃ ┣ 📂pages // all entry pages
  ┃ ┃ ┃ ┣ 📜Empty.vue
  ┃ ┃ ┃ ┣ 📜Home.vue
@@ -37,9 +38,14 @@
  ┃ ┃ ┃ ┃ ┣ 📜index.ts
  ┃ ┃ ┃ ┃ ┣ 📜main.ts
  ┃ ┃ ┃ ┃ ┗ 📜not-found.ts
+ ┃ ┃ ┃ ┣ 📜index.ts
  ┃ ┃ ┣ 📂stores
  ┃ ┃ ┣ 📂typings
  ┃ ┃ ┣ 📂utils
+ ┃ ┃ ┣ 📜app.ts
+ ┃ ┃ ┣ 📜App.vue
+ ┃ ┃ ┣ 📜entry-client.ts
+ ┃ ┃ ┣ 📜entry-server.ts
  ┃ ┗ 📂server
  ┃ ┃ ┣ 📂controllers
  ┃ ┃ ┣ 📂middlewares
@@ -47,7 +53,6 @@
  ┃ ┃ ┣ 📂utils
  ┃ ┃ ┣ 📜index-dev-server.ts
  ┃ ┃ ┣ 📜index.ts
- ┃ ┃ ┗ 📜tsconfig-server.json // config file for server only
  ┣ 📜.env
  ┣ 📜package.json
 ```

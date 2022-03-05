@@ -32,7 +32,7 @@ export const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'hea
     .join('\n')
 }
 
-const renderDevServerScript = () => Boolean(process.env.VITE)
+const renderDevServerScript = () => Boolean(process.env.DEV_SERVER)
   ? '<script type="module" src="/src/app/entry-client.ts"></script>'
   : ''
 
