@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="home-page">
     <header class="header">
       <LocaleSwitcher/>
     </header>
@@ -14,7 +14,7 @@
       <img
         alt="ashkan forouzani"
         class="image"
-        src="../assets/ashkan-forouzani-m0l9NBCivuk-unsplash.jpg"
+        src="../../assets/ashkan-forouzani-m0l9NBCivuk-unsplash.jpg"
         width="640"
         height="427">
 
@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss">
-  .homepage {
+  .home-page {
     color: $color-standard-1;
     text-align: center;
 

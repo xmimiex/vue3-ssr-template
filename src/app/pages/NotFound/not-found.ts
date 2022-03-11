@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import { ROUTES } from '@app/router/constants'
+import { ROUTES } from '@app/contracts/types'
 import { AppKoaContext } from '@app/typings/ssr'
 
 export default (serverContext?: AppKoaContext): RouteRecordRaw => ({
@@ -9,5 +9,5 @@ export default (serverContext?: AppKoaContext): RouteRecordRaw => ({
     if (serverContext) serverContext.status = 404
     next()
   },
-  component: () => import(/* webpackChunkName: "notFound" */ '../../pages/NotFound.vue'),
+  component: () => import(/* webpackChunkName: "notFound" */ './NotFound.vue'),
 })
