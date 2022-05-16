@@ -9,10 +9,12 @@ const postCreateStore = async (store?: Pinia) => {
   delete window.__INITIAL_STATE__
 }
 
-(async () => {
+const entry = async () => {
   const { app, router } = await createApp({ postCreateStore })
 
   await router.isReady()
 
   app.mount('#app', true)
-})()
+}
+
+export default entry()

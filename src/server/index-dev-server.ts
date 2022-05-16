@@ -17,6 +17,12 @@ import renderAppDevServerController from '@server/controllers/render-app-dev-ser
     configFile: path.resolve(root, 'build/vite.dev-server.js'),
     server: {
       middlewareMode: 'ssr',
+      watch: {
+        // During tests we edit the files too fast and sometimes chokidar
+        // misses change events, so enforce polling for consistency
+        usePolling: true,
+        interval: 100,
+      },
     },
   })
 
@@ -28,5 +34,14 @@ import renderAppDevServerController from '@server/controllers/render-app-dev-ser
   router.get('/(.*)', (ctx) => renderAppDevServerController(ctx, vite))
 
   devServer.listen(3000, () =>
-    console.log('You can navigate to http://localhost:3000'))
+    console.log(
+      '\x1b[32m\x1b[1m\n\n',
+      '-------------------------------------------------------\n\n',
+      '  You can navigate to :\n\n',
+      '\x1b[37m\n',
+      `  🔥  Local           : http://localhost:${process.env.PORT || 3000}\n\n`,
+      '\x1b[32m\x1b[1m\n\n',
+      '-------------------------------------------------------\n\n',
+      '\x1b[0m',
+    ))
 })()
