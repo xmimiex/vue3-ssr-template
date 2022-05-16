@@ -1,32 +1,19 @@
-import { ModuleNode, ViteDevServer } from 'vite'
+import { ViteDevServer } from 'vite'
 import { KoaContext } from '@server/typings/server'
 import { appConf } from '@server/utils/config'
 import { renderToString } from '@vue/server-renderer'
 import { renderHeadToString } from '@vueuse/head'
+import { collectCss } from '@server/utils/collectDevStyles'
 import path from 'path'
 import fs from 'fs'
 
-export default async (ctx: KoaContext, vite: ViteDevServer)=> {
+export default async (ctx: KoaContext, vite: ViteDevServer) => {
   try {
     // always read fresh template in dev
     let template = fs.readFileSync(path.resolve(process.cwd(), 'public/index.html'), 'utf-8')
     template = await vite.transformIndexHtml(ctx.path, template)
     const createApp = (await vite.ssrLoadModule('src/app/entry-server.ts')).default
-    const render = (await vite.ssrLoadModule('src/server/utils/render.ts')).default
-
-    const styles = new Map()
-    const collectCssUrls = (mods: Set<ModuleNode>, styles: Map<string, string>) => {
-      for (const mod of mods) {
-        if (mod.ssrModule && mod.file && mod.id) {
-          if (mod.file.endsWith('css') || /\?vue&type=style/.test(mod.id)) {
-            styles.set(mod.url, mod.ssrModule.default)
-          }
-        }
-        if (mod.importedModules && mod.importedModules.size > 0) {
-          collectCssUrls(mod.importedModules, styles)
-        }
-      }
-    }
+    const render = (await vite.ssrLoadModule('src/server/utils/render/index.ts')).default
 
     const { app, router, store, head } = await createApp(ctx, appConf)
 
@@ -36,9 +23,9 @@ export default async (ctx: KoaContext, vite: ViteDevServer)=> {
     const html = await renderToString(app)
     const { headTags, htmlAttrs, bodyAttrs } = renderHeadToString(head)
 
-    const mods = vite.moduleGraph.idToModuleMap
-    collectCssUrls(new Set([...mods.values()]), styles)
-    const devStyles = [...styles.values()].join('\n')
+    const modsList = vite.moduleGraph.idToModuleMap
+    const devStyles = collectCss(new Set([...modsList.values()]))
+
 
     const bodyHtml = render(ctx,
       template,

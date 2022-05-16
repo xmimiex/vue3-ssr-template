@@ -3,7 +3,7 @@ import {
   renderState,
   renderThirdPartyScripts,
   convertScriptConfigToHtml,
-} from './render'
+} from '.'
 
 describe('render', () => {
 

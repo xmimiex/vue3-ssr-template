@@ -23,7 +23,7 @@ ${scriptConfig.async ? 'async' : ''}> \
 ${scriptConfig.body || ''}\
 </script>`
 
-export const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody : 'head' | 'body') => {
+export const renderThirdPartyScripts = (query: ParsedUrlQuery, headOrBody: 'head' | 'body') => {
   if (!appConf || !appConf.thirdPartyScripts || ('ignore-third-party' in query)) return ''
 
   return appConf.thirdPartyScripts
@@ -50,7 +50,7 @@ export default (ctx: KoaContext,
     .replace('{{ head_tags }}', headTags)
     .replace('{{ body_attrs }}', bodyAttrs)
     .replace('{{ state }}', renderState(store))
-    .replace('{{ styles }}', renderStyles(styles))
+    .replace('{{ styles }}', process.env.VITE ? styles : renderStyles(styles))
     .replace('{{ third_party_head }}', renderThirdPartyScripts(ctx.request.query, 'head'))
     .replace('{{ third_party_body }}', '')
     .replace('{{ dev_server_script }}', renderDevServerScript())
