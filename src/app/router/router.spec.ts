@@ -1,6 +1,6 @@
-import createRouter from '.'
+import { ROUTES } from '../contracts/types'
 import { setActivePinia, createPinia } from 'pinia'
-import { ROUTES } from './constants'
+import createRouter from '.'
 
 describe('Router', () => {
   beforeEach(() => {

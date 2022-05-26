@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
-import notFound from './not-found'
-import main from './main'
 import { AppKoaContext } from '@app/typings/ssr'
+import main from '@app/pages/Main'
+import notFound from '@app/pages/NotFound'
 
 export default (serverContext?: AppKoaContext): RouteRecordRaw[] => [
   main(),

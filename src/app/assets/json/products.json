@@ -1,0 +1,182 @@
+[
+  {
+    "productId": 1,
+    "name": "Phone a",
+    "ref": "123",
+    "price": 500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/100/500/300",
+    "popularity": 3
+  },
+  {
+    "productId": 2,
+    "name": "Phone b",
+    "ref": "234",
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/101/500/300",
+    "popularity": 2
+  },
+  {
+    "productId": 3,
+    "name": "Phone c",
+    "ref": "345",
+    "price": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/102/500/300",
+    "popularity": 1
+  },
+  {
+    "productId": 4,
+    "name": "Phone d",
+    "ref": "456",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/103/500/300",
+    "popularity": 4
+  },
+  {
+    "productId": 5,
+    "name": "Phone e",
+    "ref": "567",
+    "price": 300,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/104/500/300",
+    "popularity": 5
+  },
+  {
+    "productId": 6,
+    "name": "Phone f",
+    "ref": "678",
+    "price": 500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/105/500/300",
+    "popularity": 3
+  },
+  {
+    "productId": 7,
+    "name": "Phone g",
+    "ref": "789",
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/106/500/300",
+    "popularity": 2
+  },
+  {
+    "productId": 8,
+    "name": "Phone h",
+    "ref": "890",
+    "price": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/107/500/300",
+    "popularity": 1
+  },
+  {
+    "productId": 9,
+    "name": "Phone i",
+    "ref": "901",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/108/500/300",
+    "popularity": 4
+  },
+  {
+    "productId": 10,
+    "name": "Phone j",
+    "ref": "012",
+    "price": 300,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/109/500/300",
+    "popularity": 5
+  },
+  {
+    "productId": 11,
+    "name": "Phone k",
+    "ref": "123",
+    "price": 500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/110/500/300",
+    "popularity": 3
+  },
+  {
+    "productId": 12,
+    "name": "Phone l",
+    "ref": "234",
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/111/500/300",
+    "popularity": 2
+  },
+  {
+    "productId": 13,
+    "name": "Phone m",
+    "ref": "345",
+    "price": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/112/500/300",
+    "popularity": 1
+  },
+  {
+    "productId": 14,
+    "name": "Phone n",
+    "ref": "456",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/113/500/300",
+    "popularity": 4
+  },
+  {
+    "productId": 15,
+    "name": "Phone o",
+    "ref": "567",
+    "price": 300,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/114/500/300",
+    "popularity": 5
+  },
+  {
+    "productId": 16,
+    "name": "Phone p",
+    "ref": "678",
+    "price": 500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/115/500/300",
+    "popularity": 3
+  },
+  {
+    "productId": 17,
+    "name": "Phone q",
+    "ref": "789",
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/116/500/300",
+    "popularity": 2
+  },
+  {
+    "productId": 18,
+    "name": "Phone r",
+    "ref": "890",
+    "price": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/117/500/300",
+    "popularity": 1
+  },
+  {
+    "productId": 19,
+    "name": "Phone s",
+    "ref": "901",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/118/500/300",
+    "popularity": 4
+  },
+  {
+    "productId": 20,
+    "name": "Phone t",
+    "ref": "012",
+    "price": 300,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "url": "https://picsum.photos/id/119/500/300",
+    "popularity": 5
+  }
+]
